@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:500');
+@import url('https://fonts.googleapis.com/css?family=Paytone+One');
+@import url('https://fonts.googleapis.com/css?family=Heebo');
+@import url('https://fonts.googleapis.com/css?family=Bree+Serif');
+
+
+ @media only screen and (max-device-width: 700px){
+ 	.navbar{
+ 		font-size: 180%;
+ 		font-family: 'Roboto';
+ 	}
+
+ 	.btn{
+ 		font-size: 120%;
+ 	}
+
+ 	.mybtn{
+		background-color: transparent;
+		color: white;
+		border-color: white;
+	}
+
+	.mybtn:hover{
+		border-color: black;
+	}
+
+	.navbar-brand{
+		font-weight: bold; font-size: 200%;
+	}
+	#sub-head{
+		font-size: 300%;
+		font-family: 'Bree Serif', serif;
+	}
+	.head-content{
+		font-size: 270%;
+		font-family: 'Bree Serif', serif;
+	}
+
+	.content{
+		font-size: 200%;
+	}
+
+	.my-btn-anim{
+      background-color: white;
+      border-style: solid;
+      border-color: #1ac417;
+      border-radius: 10%;
+      font-size: 120%;
+      width: 4em;
+    }
+
+	.my-btn-anim:hover{
+	  background-color: #1ac417;
+	  color: white;
+	  border-color: black;
+	}
+
+	.my-btn-anim2{
+	  background-color: #1ac417;
+	  border-style: solid;
+	  border-color: black;
+	  border-radius: 10%;
+	  font-size: 120%;
+	  color: white;
+	  padding:  0.5% 1.5%;
+	  width: 4em;
+	}
+
+	.my-btn-anim2:hover{
+	  background-color: white;
+	  color: black;
+	  border-color: #1ac417;
+	}
+
+	#loginForm, #signupForm{
+		margin-top: 10%;
+		font-size: 170%;
+	}
+
+	.modal-title{
+		font-size: 150%;
+	}
+	.footer {
+	  position: absolute;
+	  right: 0;
+	  bottom: 0;
+	  left: 0;
+	  padding: 1rem;
+	  font-size: 170%;
+	  background-color: #f2f2f2;
+	  text-align: center;
+	}
+ } 
+
+@media screen and (min-width: 1024px){
+	.footer {   
+		clear: both;
+	    position: relative;
+	    padding-top: 2%;
+	    height: 60px;
+	    margin-top: -60px;
+	    background-color: #f2f2f2;
+	    text-align: center;
+	}
+
+	body{
+		font-family: 'Roboto';
+		min-height: 100%;
+	}
+
+	#sub-head, .head-content{
+		font-family: 'Bree Serif', serif;
+	}
+
+	.mybtn{
+		background-color: transparent;
+		color: white;
+		border-color: white;
+	}
+
+	.mybtn:hover{
+		border-color: black;
+		background-color: #ef8b00;
+		font-weight: bold;
+	}
+
+	#aboutus{
+		font-size: 120%;
+	}
+
+	#aboutus:hover{
+		color: #ef8b00;
+		font-weight: bold;
+	}
+
+	.navbar-brand{
+		font-weight: bold; font-family: 'Roboto'; font-size: 130%;
+	}
+
+	.my-btn-anim{
+	      background-color: white;
+	      border-style: solid;
+	      border-color: #1ac417;
+	      border-radius: 10%;
+	      font-size: 110%;
+	      padding:  0.3% 1%;
+	    }
+
+	.my-btn-anim:hover{
+	  background-color: #1ac417;
+	  color: white;
+	  border-color: black;
+	}
+
+	.my-btn-anim2{
+	  background-color: #1ac417;
+	  border-style: solid;
+	  border-color: black;
+	  border-radius: 10%;
+	  font-size: 110%;
+	  color: white;
+	  padding:  0.3% 1%;
+	}
+
+	.my-btn-anim2:hover{
+	  background-color: white;
+	  color: black;
+	  border-color: #1ac417;
+	}
+
+	.input-md{
+		background-color: red;
+	}
+
+}
+
+/*if neither of the above sized screen use this stylings*/
+
+
+	body{
+		font-family: 'Roboto';
+		min-height: 100%;
+	}
+
+	#sub-head, .head-content{
+		font-family: 'Bree Serif', serif;
+	}
+
+	.mybtn{
+		background-color: transparent;
+		color: white;
+		border-color: white;
+	}
+
+	.mybtn:hover{
+		border-color: black;
+		background-color: #ef8b00;
+		font-weight: bold;
+	}
+
+	#aboutus{
+		font-size: 120%;
+	}
+
+	#aboutus:hover{
+		color: #ef8b00;
+		font-weight: bold;
+	}
+
+	.navbar-brand{
+		font-weight: bold; font-family: 'Roboto'; font-size: 130%;
+	}
+
+	.my-btn-anim{
+	      background-color: white;
+	      border-style: solid;
+	      border-color: #1ac417;
+	      border-radius: 10%;
+	      font-size: 110%;
+	      padding:  0.3% 1%;
+	    }
+
+	.my-btn-anim:hover{
+	  background-color: #1ac417;
+	  color: white;
+	  border-color: black;
+	}
+
+	.my-btn-anim2{
+	  background-color: #1ac417;
+	  border-style: solid;
+	  border-color: black;
+	  border-radius: 10%;
+	  font-size: 110%;
+	  color: white;
+	  padding:  0.3% 1%;
+	}
+
+	.my-btn-anim2:hover{
+	  background-color: white;
+	  color: black;
+	  border-color: #1ac417;
+	}
