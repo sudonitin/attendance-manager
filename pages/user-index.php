@@ -105,16 +105,16 @@
 		  <tbody>
 		    <tr>
 		      <th scope="row">1</th>
-		      <td><input type="text" size="4" class='form-control input-md' name=""></td>
-		      <td><input type="text" size="4" class='form-control input-md' name=""></td>
-		      <td><input type="text" size="4" class='form-control input-md' name=""></td>
-		      <td><input type="text" size="4" class='form-control input-md' name=""></td>
-		      <td><input type="text" size="4" class='form-control input-md' name=""></td>
-		      <td><input type="text" size="4" class='form-control input-md' name=""></td>
-		      <td><input type="text" size="4" class='form-control input-md' name=""></td>
-		      <td><input type="text" size="4" class='form-control input-md' name=""></td>
-		      <td><input type="text" size="4" class='form-control input-md' name=""></td>
-		      <td><input type="text" size="4" class='form-control input-md' name=""></td>
+		      <td><input type="text" size="4" class='form-control input-md' name=0></td>
+		      <td><input type="text" size="4" class='form-control input-md' name=0></td>
+		      <td><input type="text" size="4" class='form-control input-md' name=0></td>
+		      <td><input type="text" size="4" class='form-control input-md' name=0></td>
+		      <td><input type="text" size="4" class='form-control input-md' name=0></td>
+		      <td><input type="text" size="4" class='form-control input-md' name=0></td>
+		      <td><input type="text" size="4" class='form-control input-md' name=0></td>
+		      <td><input type="text" size="4" class='form-control input-md' name=0></td>
+		      <td><input type="text" size="4" class='form-control input-md' name=0></td>
+		      <td><input type="text" size="4" class='form-control input-md' name=0></td>
 		      <!-- <td><input type="button" name="" value="add row"></td> -->
 		    </tr>
 		    <tr id="addr1"></tr>

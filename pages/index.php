@@ -140,7 +140,7 @@ if (isset($_POST['login'])) {
       if ($row['username'] == $email && $row['password'] == $user_password) {
         # code...
 				$_SESSION['logged_in'] = "active";
-				$_SESSION['email'] = $email;
+				$_SESSION['username'] = $email;
         // $_SESSION['uid'] = $row['uid'];
         #echo $_SESSION['logged_in'];
         // header("location: ./user-index.php");

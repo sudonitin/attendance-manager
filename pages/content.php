@@ -13,7 +13,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-echo $_SESSION['email'];
+echo $_SESSION['username'];
 ?>
 
 
