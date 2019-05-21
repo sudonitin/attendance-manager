@@ -145,17 +145,25 @@
 		}
 
 		if(isset($_POST['insert'])){
-			$montime =  mysqli_real_escape_string($conn, $_POST['']);
-			$tuetime =  mysqli_real_escape_string($conn, $_POST['']);
-			$wedtime =  mysqli_real_escape_string($conn, $_POST['']);
-			$thutime =  mysqli_real_escape_string($conn, $_POST['']);
-			$fritime =  mysqli_real_escape_string($conn, $_POST['']);
 
-			$mon =  mysqli_real_escape_string($conn, $_POST['']);
-			$tue =  mysqli_real_escape_string($conn, $_POST['']);
-			$wed =  mysqli_real_escape_string($conn, $_POST['']);
-			$thu =  mysqli_real_escape_string($conn, $_POST['']);
-			$fri =  mysqli_real_escape_string($conn, $_POST['']);
+			for ($i=0; $i < 0; $i++) {  //this value of i should be passed from addrow.js file
+				# code...
+				$montime =  mysqli_real_escape_string($conn, $_POST['']); //concatenate $i with name of input fields like "'montime' + $i"
+				$tuetime =  mysqli_real_escape_string($conn, $_POST['']);
+				$wedtime =  mysqli_real_escape_string($conn, $_POST['']);
+				$thutime =  mysqli_real_escape_string($conn, $_POST['']);
+				$fritime =  mysqli_real_escape_string($conn, $_POST['']);
+
+				$mon =  mysqli_real_escape_string($conn, $_POST['']);
+				$tue =  mysqli_real_escape_string($conn, $_POST['']);
+				$wed =  mysqli_real_escape_string($conn, $_POST['']);
+				$thu =  mysqli_real_escape_string($conn, $_POST['']);
+				$fri =  mysqli_real_escape_string($conn, $_POST['']);
+				
+				//add the insertion prepared statements here
+
+			}
+			
 		}
 	?>
 </body>
