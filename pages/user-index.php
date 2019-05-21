@@ -102,29 +102,61 @@
 		      <th scope="col">Fri</th>
 		    </tr>
 		  </thead>
-		  <tbody>
-		    <tr>
-		      <th scope="row">1</th>
-		      <td><input type="text" size="4" class='form-control input-md' name=0></td>
-		      <td><input type="text" size="4" class='form-control input-md' name=0></td>
-		      <td><input type="text" size="4" class='form-control input-md' name=0></td>
-		      <td><input type="text" size="4" class='form-control input-md' name=0></td>
-		      <td><input type="text" size="4" class='form-control input-md' name=0></td>
-		      <td><input type="text" size="4" class='form-control input-md' name=0></td>
-		      <td><input type="text" size="4" class='form-control input-md' name=0></td>
-		      <td><input type="text" size="4" class='form-control input-md' name=0></td>
-		      <td><input type="text" size="4" class='form-control input-md' name=0></td>
-		      <td><input type="text" size="4" class='form-control input-md' name=0></td>
-		      <!-- <td><input type="button" name="" value="add row"></td> -->
-		    </tr>
-		    <tr id="addr1"></tr>
-		  </tbody>
+			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td><input type="text" size="4" class='form-control input-md' name="montime"></td>
+						<td><input type="text" size="4" class='form-control input-md' name="mon"></td>
+						<td><input type="text" size="4" class='form-control input-md' name="tuetime"></td>
+						<td><input type="text" size="4" class='form-control input-md' name="tue"></td>
+						<td><input type="text" size="4" class='form-control input-md' name="wedtime"></td>
+						<td><input type="text" size="4" class='form-control input-md' name="wed"></td>
+						<td><input type="text" size="4" class='form-control input-md' name="thutime"></td>
+						<td><input type="text" size="4" class='form-control input-md' name="thu"></td>
+						<td><input type="text" size="4" class='form-control input-md' name="fritime"></td>
+						<td><input type="text" size="4" class='form-control input-md' name="fri"></td>
+						<!-- <td><input type="button" name="" value="add row"></td> -->
+					</tr>
+					<tr id="addr1"></tr>
+				</tbody>
+			</form>
 		</table>
 		<input type="button" class="btn btn-danger" value="Add row" id="add_row"  name=""> <small>Leave the boxes empty if not needed</small>
+		<input type = "button" value="submit" name="insert">
 	</div>
 	<!-- <footer class="footer" style="text-align: center; background-color: #f2f2f2; padding-top: 2%; padding-bottom: 2%;">
 
 		Copyright 2019 <a href="#">@TechZone</a>
 	</footer> -->
+	<?php 
+		session_start();
+
+		$servername = "localhost";
+		$username = "root";
+		$password = "";
+		$db = "attendance";
+		// Create connection
+		$conn = mysqli_connect($servername, $username, $password, $db);
+		
+		// Check connection
+		if (!$conn) {
+				die("Connection failed: " . mysqli_connect_error());
+		}
+
+		if(isset($_POST['insert'])){
+			$montime =  mysqli_real_escape_string($conn, $_POST['']);
+			$tuetime =  mysqli_real_escape_string($conn, $_POST['']);
+			$wedtime =  mysqli_real_escape_string($conn, $_POST['']);
+			$thutime =  mysqli_real_escape_string($conn, $_POST['']);
+			$fritime =  mysqli_real_escape_string($conn, $_POST['']);
+
+			$mon =  mysqli_real_escape_string($conn, $_POST['']);
+			$tue =  mysqli_real_escape_string($conn, $_POST['']);
+			$wed =  mysqli_real_escape_string($conn, $_POST['']);
+			$thu =  mysqli_real_escape_string($conn, $_POST['']);
+			$fri =  mysqli_real_escape_string($conn, $_POST['']);
+		}
+	?>
 </body>
 </html>
