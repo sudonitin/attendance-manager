@@ -1,3 +1,42 @@
+<?php 
+		#echo "<script>console.log('hello'+document.getElementById('varval').value);</script>";
+	
+		$servername = "localhost";
+		$username = "root";
+		$password = "";
+		$db = "attendance";
+		// Create connection
+		$conn = mysqli_connect($servername, $username, $password, $db);
+		
+		// Check connection
+		if (!$conn) {
+				die("Connection failed: " . mysqli_connect_error());
+		}
+
+		if(isset($_POST['insert'])){
+			echo $_POST['fri'];
+			for ($i=0; $i < 0; $i++) {  //this value of i should be passed from addrow.js file
+				# code...
+				$montime =  mysqli_real_escape_string($conn, $_POST['']); //concatenate $i with name of input fields like "'montime' + $i"
+				$tuetime =  mysqli_real_escape_string($conn, $_POST['']);
+				$wedtime =  mysqli_real_escape_string($conn, $_POST['']);
+				$thutime =  mysqli_real_escape_string($conn, $_POST['']);
+				$fritime =  mysqli_real_escape_string($conn, $_POST['']);
+
+				$mon =  mysqli_real_escape_string($conn, $_POST['']);
+				$tue =  mysqli_real_escape_string($conn, $_POST['']);
+				$wed =  mysqli_real_escape_string($conn, $_POST['']);
+				$thu =  mysqli_real_escape_string($conn, $_POST['']);
+				$fri =  mysqli_real_escape_string($conn, $_POST['']);
+				
+				//add the insertion prepared statements here
+
+			}
+			
+		}
+	?>
+
+
 
 <!DOCTYPE html>
 <html>
@@ -13,52 +52,54 @@
   <script type="text/javascript" src="../js/index.js"></script>
   <script type="text/javascript" src="../js/addrow.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<div id="particles-js" style="z-index: -1;" ></div>
-		<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib --> <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
 
-		<style type="text/css">
-		
-	/* ---- reset ---- */ 
-	canvas{ 
-		display: block;
-	 	vertical-align: bottom; 
-	 	}
-	  /* ---- particles.js container ---- */ 
-	#particles-js{ 
-	  	position:absolute; 
-	  	width: 100%; 
-	  	height: 100%; 
-	  	}
-	  
-	   /* ---- stats.js ---- */ 
-	.count-particles{ background: #000022; position: absolute; top: 48px; left: 0; width: 80px; color: #13E8E9 text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; } 
+<div id="particlecode">
+	<div id="particles-js" style="z-index: -1;" ></div>
+			<script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <!-- stats.js lib --> <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
 
-	.js-count-particles{ 
-; 
-	} 
+			<style type="text/css">
+			
+		/* ---- reset ---- */ 
+		canvas{ 
+			display: block;
+			vertical-align: bottom; 
+			}
+			/* ---- particles.js container ---- */ 
+		#particles-js{ 
+				position:absolute; 
+				width: 100%; 
+				height: 100%; 
+				}
+			
+			/* ---- stats.js ---- */ 
+		.count-particles{ background: #000022; position: absolute; top: 48px; left: 0; width: 80px; color: #13E8E9 text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; } 
 
-	#stats, .count-particles{ 
-		-webkit-user-select: none; 
-		margin-top: 5px; 
-		margin-left: 5px; 
-	} 
+		.js-count-particles{ 
+	; 
+		} 
 
-	#stats{ 
-		border-radius: 3px 3px 0 0; 
-		overflow: hidden; 
-	} 
+		#stats, .count-particles{ 
+			-webkit-user-select: none; 
+			margin-top: 5px; 
+			margin-left: 5px; 
+		} 
 
-	.count-particles{ 
-		border-radius: 0 0 3px 3px; 
-	}
+		#stats{ 
+			border-radius: 3px 3px 0 0; 
+			overflow: hidden; 
+		} 
 
-		</style>
+		.count-particles{ 
+			border-radius: 0 0 3px 3px; 
+		}
 
-		<script type="text/javascript">
-			particlesJS("particles-js", {"particles":{"number":{"value":30,"density":{"enable":true,"value_area":204.2650760819035}},"color":{"value":"#ff5000"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":1,"random":false,"anim":{"enable":false,"speed":9.176472499005207,"opacity_min":0.0974492654761615,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#ffd91e","opacity":0.9620472365193137,"width":2},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
-		</script>
+			</style>
 
-		
+			<script type="text/javascript">
+				particlesJS("particles-js", {"particles":{"number":{"value":30,"density":{"enable":true,"value_area":204.2650760819035}},"color":{"value":"#ff5000"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":1,"random":false,"anim":{"enable":false,"speed":9.176472499005207,"opacity_min":0.0974492654761615,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#ffd91e","opacity":0.9620472365193137,"width":2},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
+			</script>
+
+	</div>
 	<!--particle ends here-->
 	</head>
 		
@@ -115,56 +156,25 @@
 						<td><input type="text" size="4" class='form-control input-md' name="thutime"></td>
 						<td><input type="text" size="4" class='form-control input-md' name="thu"></td>
 						<td><input type="text" size="4" class='form-control input-md' name="fritime"></td>
-						<td><input type="text" size="4" class='form-control input-md' name="fri"></td>
+						<td><input type="text" size="4" class='form-control input-md' name="fri" id="fri"></td>
 						<!-- <td><input type="button" name="" value="add row"></td> -->
 					</tr>
 					<tr id="addr1"></tr>
 				</tbody>
 			</form>
 		</table>
+		<input name="varvalue" style="display: none;" type="num" id="varval">
 		<input type="button" class="btn btn-danger" value="Add row" id="add_row"  name=""> <small>Leave the boxes empty if not needed</small>
-		<input type = "button" value="submit" name="insert">
+		<input type = "button" value="submit" name="insert" onclick="post();">
 	</div>
+	
 	<!-- <footer class="footer" style="text-align: center; background-color: #f2f2f2; padding-top: 2%; padding-bottom: 2%;">
 
 		Copyright 2019 <a href="#">@TechZone</a>
 	</footer> -->
-	<?php 
-		session_start();
-
-		$servername = "localhost";
-		$username = "root";
-		$password = "";
-		$db = "attendance";
-		// Create connection
-		$conn = mysqli_connect($servername, $username, $password, $db);
+		<script>
+		  
+		</script>
 		
-		// Check connection
-		if (!$conn) {
-				die("Connection failed: " . mysqli_connect_error());
-		}
-
-		if(isset($_POST['insert'])){
-
-			for ($i=0; $i < 0; $i++) {  //this value of i should be passed from addrow.js file
-				# code...
-				$montime =  mysqli_real_escape_string($conn, $_POST['']); //concatenate $i with name of input fields like "'montime' + $i"
-				$tuetime =  mysqli_real_escape_string($conn, $_POST['']);
-				$wedtime =  mysqli_real_escape_string($conn, $_POST['']);
-				$thutime =  mysqli_real_escape_string($conn, $_POST['']);
-				$fritime =  mysqli_real_escape_string($conn, $_POST['']);
-
-				$mon =  mysqli_real_escape_string($conn, $_POST['']);
-				$tue =  mysqli_real_escape_string($conn, $_POST['']);
-				$wed =  mysqli_real_escape_string($conn, $_POST['']);
-				$thu =  mysqli_real_escape_string($conn, $_POST['']);
-				$fri =  mysqli_real_escape_string($conn, $_POST['']);
-				
-				//add the insertion prepared statements here
-
-			}
-			
-		}
-	?>
 </body>
 </html>
