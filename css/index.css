@@ -93,6 +93,10 @@
  } 
 
 @media screen and (min-width: 1024px){
+	#table_logic tbody tr td{
+		width: 70%;
+	}
+
 	.footer {   
 		clear: both;
 	    position: relative;
@@ -170,6 +174,7 @@
 
 	.input-md{
 		background-color: red;
+		width: 70%;
 	}
 
 }

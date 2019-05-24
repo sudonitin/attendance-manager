@@ -1,40 +1,3 @@
-<?php 
-		#echo "<script>console.log('hello'+document.getElementById('varval').value);</script>";
-	
-		$servername = "localhost";
-		$username = "root";
-		$password = "";
-		$db = "attendance";
-		// Create connection
-		$conn = mysqli_connect($servername, $username, $password, $db);
-		
-		// Check connection
-		if (!$conn) {
-				die("Connection failed: " . mysqli_connect_error());
-		}
-
-		if(isset($_POST['insert'])){
-			echo $_POST['fri'];
-			for ($i=0; $i < 0; $i++) {  //this value of i should be passed from addrow.js file
-				# code...
-				$montime =  mysqli_real_escape_string($conn, $_POST['']); //concatenate $i with name of input fields like "'montime' + $i"
-				$tuetime =  mysqli_real_escape_string($conn, $_POST['']);
-				$wedtime =  mysqli_real_escape_string($conn, $_POST['']);
-				$thutime =  mysqli_real_escape_string($conn, $_POST['']);
-				$fritime =  mysqli_real_escape_string($conn, $_POST['']);
-
-				$mon =  mysqli_real_escape_string($conn, $_POST['']);
-				$tue =  mysqli_real_escape_string($conn, $_POST['']);
-				$wed =  mysqli_real_escape_string($conn, $_POST['']);
-				$thu =  mysqli_real_escape_string($conn, $_POST['']);
-				$fri =  mysqli_real_escape_string($conn, $_POST['']);
-				
-				//add the insertion prepared statements here
-
-			}
-			
-		}
-	?>
 
 
 
@@ -127,7 +90,7 @@
 		  </div>
 	</nav><br>
 	<div class="container">
-		<table class="table table-bordered" id="tab_logic">
+		<table class="table table-bordered" id="tab_logic" >
 		  <thead class="thead-light" >
 		    <tr>
 		      <th scope="col">#</th>
@@ -143,29 +106,17 @@
 		      <th scope="col">Fri</th>
 		    </tr>
 		  </thead>
-			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
 				<tbody>
-					<tr>
-						<th scope="row">1</th>
-						<td><input type="text" size="4" class='form-control input-md' name="montime" id="montime-0"></td>
-						<td><input type="text" size="4" class='form-control input-md' name="mon" id="mon-0"></td>
-						<td><input type="text" size="4" class='form-control input-md' name="tuetime" id="tuetime-0"></td>
-						<td><input type="text" size="4" class='form-control input-md' name="tue" id="tue-0"></td>
-						<td><input type="text" size="4" class='form-control input-md' name="wedtime" id="wedtime-0"></td>
-						<td><input type="text" size="4" class='form-control input-md' name="wed" id="wed-0"></td>
-						<td><input type="text" size="4" class='form-control input-md' name="thutime" id="thutime-0"></td>
-						<td><input type="text" size="4" class='form-control input-md' name="thu" id="thu-0"></td>
-						<td><input type="text" size="4" class='form-control input-md' name="fritime" id="fritime-0"></td>
-						<td><input type="text" size="4" class='form-control input-md' name="fri" id="fri-0"></td>
-						<!-- <td><input type="button" name="" value="add row"></td> -->
-					</tr>
-					<tr id="addr1"></tr>
+				
+					<tr id="addr0"></tr>
 				</tbody>
-			</form>
+				<input type = "submit" value="submit" id='insert' name="insert">
+			
+			
 		</table>
-		<input name="varvalue" style="display: none;" type="num" id="varval">
+		
 		<input type="button" class="btn btn-danger" value="Add row" id="add_row"  name=""> <small>Leave the boxes empty if not needed</small>
-		<input type = "button" value="submit" name="insert" onclick="post();">
+		
 	</div>
 	
 	<!-- <footer class="footer" style="text-align: center; background-color: #f2f2f2; padding-top: 2%; padding-bottom: 2%;">

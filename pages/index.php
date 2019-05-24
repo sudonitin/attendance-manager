@@ -233,7 +233,7 @@ if (isset($_POST['login'])) {
 		          </div>
 		          <div class="form-group">
 		            <label for="password" class="col-form-label" style="color: grey;">Password:</label>
-		            <input class="form-control" type="password" id="password1" name="logpassword"></input>
+		            <input class="form-control" type="password" id="password1" name="logpassword" />
 		          </div>
 		          <div class="modal-footer">
 			        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
