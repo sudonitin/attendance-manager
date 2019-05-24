@@ -147,16 +147,16 @@
 				<tbody>
 					<tr>
 						<th scope="row">1</th>
-						<td><input type="text" size="4" class='form-control input-md' name="montime"></td>
-						<td><input type="text" size="4" class='form-control input-md' name="mon"></td>
-						<td><input type="text" size="4" class='form-control input-md' name="tuetime"></td>
-						<td><input type="text" size="4" class='form-control input-md' name="tue"></td>
-						<td><input type="text" size="4" class='form-control input-md' name="wedtime"></td>
-						<td><input type="text" size="4" class='form-control input-md' name="wed"></td>
-						<td><input type="text" size="4" class='form-control input-md' name="thutime"></td>
-						<td><input type="text" size="4" class='form-control input-md' name="thu"></td>
-						<td><input type="text" size="4" class='form-control input-md' name="fritime"></td>
-						<td><input type="text" size="4" class='form-control input-md' name="fri" id="fri"></td>
+						<td><input type="text" size="4" class='form-control input-md' name="montime" id="montime-0"></td>
+						<td><input type="text" size="4" class='form-control input-md' name="mon" id="mon-0"></td>
+						<td><input type="text" size="4" class='form-control input-md' name="tuetime" id="tuetime-0"></td>
+						<td><input type="text" size="4" class='form-control input-md' name="tue" id="tue-0"></td>
+						<td><input type="text" size="4" class='form-control input-md' name="wedtime" id="wedtime-0"></td>
+						<td><input type="text" size="4" class='form-control input-md' name="wed" id="wed-0"></td>
+						<td><input type="text" size="4" class='form-control input-md' name="thutime" id="thutime-0"></td>
+						<td><input type="text" size="4" class='form-control input-md' name="thu" id="thu-0"></td>
+						<td><input type="text" size="4" class='form-control input-md' name="fritime" id="fritime-0"></td>
+						<td><input type="text" size="4" class='form-control input-md' name="fri" id="fri-0"></td>
 						<!-- <td><input type="button" name="" value="add row"></td> -->
 					</tr>
 					<tr id="addr1"></tr>
