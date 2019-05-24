@@ -22,34 +22,35 @@ $(document).ready(function(){
        var fri = [];
 
        $('.montime').each(function(){
-         montime.push($(this).text());
+         montime.push($(this).val());
        });
        $('.mon').each(function(){
-        mon.push($(this).text());
+        mon.push($(this).val());
       });
        $('.tuetime').each(function(){
-        tuetime.push($(this).text());
+        tuetime.push($(this).val());
       });
       $('.tue').each(function(){
-        tue.push($(this).text());
+        tue.push($(this).val());
       });
       $('.wedtime').each(function(){
-        wedtime.push($(this).text());
+        wedtime.push($(this).val());
       });
       $('.wed').each(function(){
-        wed.push($(this).text());
+        wed.push($(this).val());
       });
       $('.thutime').each(function(){
-        thutime.push($(this).text());
+        thutime.push($(this).val());
       });
       $('.thu').each(function(){
-        thu.push($(this).text());
+        thu.push($(this).val());
       });
       $('.fritime').each(function(){
-        fritime.push($(this).text());
+        fritime.push($(this).val());
       });
       $('.fri').each(function(){
-        fri.push($(this).text());
+        //console.log($(this).val());
+        fri.push($(this).val());
       });
 
       $.ajax({
