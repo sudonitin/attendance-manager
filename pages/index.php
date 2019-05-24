@@ -141,11 +141,12 @@ if (isset($_POST['login'])) {
         # code...
 				$_SESSION['logged_in'] = "active";
 				$_SESSION['username'] = $email;
+				$_SESSION['id'] = $row['usrid'];
         // $_SESSION['uid'] = $row['uid'];
         #echo $_SESSION['logged_in'];
         // header("location: ./user-index.php");
 				 echo "<script type = \"text/javascript\">alert('login successful');</script>";
-				 header("location: ./content");
+				 header("location: ./user-index.php");
       }
       else{
         echo "<script type = \"text/javascript\">alert('wrong username or password.');</script>";

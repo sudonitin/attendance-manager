@@ -1,19 +1,6 @@
 <?php 
-            // $postmontime = $_POST['postmontime'];
-            // $postmon = $_POST['postmon'];
-            // $posttuetime = $_POST['posttuetime'];
-            // $posttue = $_POST['posttue'];
-            // $postwedtime = $_POST['postwedtime'];
-            // $postwed = $_POST['postwed'];
-            // $postthutime = $_POST['postthutime'];
-            // $postthu = $_POST['postthu'];
-            // $postfritime = $_POST['postfritime'];
-            // $postfri = $_POST['postfri'];
-            // echo $postwed;
-			// if($postfri == 'a' and $postfritime == 'a' and $postmon  == 'a' and $postmontime == 'a' and $postthu == 'a' and $postthutime == 'a' and  $posttue == 'a' and $posttuetime == 'a' and $postwed == 'a' and $postwedtime == 'a'){
-            //     echo "something just like this";
-
-            // }
+            session_start();
+            //echo $_SESSION['id'] . " ". $_SESSION['username'];
             $servername = "localhost";
             $username = "root";
             $password = "";
@@ -40,15 +27,7 @@
                 $query = '';
                 
                 for ($count=0; $count < count($montime); $count++) { 
-                    # code...
-                    // echo $montime[$count];
-                    // echo '';
-                    // echo $mon[$count];
-                    // echo '';
-                    // echo $tuetime[$count];
-                    // echo '';
-                    // echo $tue[$count];
-
+                   
                     $mon_clean = mysqli_real_escape_string($conn, $mon[$count]);
                     $montime_clean = mysqli_real_escape_string($conn, $montime[$count]);
                     $tue_clean = mysqli_real_escape_string($conn, $tue[$count]);
@@ -59,22 +38,14 @@
                     $thutime_clean = mysqli_real_escape_string($conn, $thutime[$count]);
                     $fri_clean = mysqli_real_escape_string($conn, $fri[$count]);
                     $fritime_clean = mysqli_real_escape_string($conn, $fritime[$count]);
-                    echo $fritime_clean;
+                    //echo $fritime_clean;
                     $query .= '
-                    INSERT INTO timetable VALUES("'.$montime_clean.'", "'.$mon_clean.'","'.$tuetime_clean.'","'.$tue_clean.'","'.$wedtime_clean.'","'.$wed_clean.'","'.$thutime_clean.'","'.$thu_clean.'","'.$fritime_clean.'","'.$fri_clean.'")
-                    ';
-
-                    // foreach ($_POST["fri"] as $key => $value) {
-                    //     # code...
-                    //     echo 'key'.$key;
-                    //     echo '';
-                    //     echo 'value'.$value;
-                    // }
+                    INSERT INTO timetable VALUES("'.$montime_clean.'", "'.$mon_clean.'","'.$tuetime_clean.'","'.$tue_clean.'","'.$wedtime_clean.'","'.$wed_clean.'", "'.$thutime_clean.'","'.$thu_clean.'","'.$fritime_clean.'","'.$fri_clean.'", "'.$_SESSION["id"].'");
+                    '; //';'must be present at the end of query because we are implementing multiple sql queries and these queries are separated by a semi-colon
+                  
                 }
 
                 if (mysqli_multi_query($conn, $query)) {
-                    # code...
-
                     echo "data inserted";
                 }
                 else{

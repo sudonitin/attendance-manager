@@ -1,4 +1,9 @@
+<?php
 
+	session_start();
+	echo $_SESSION['id'] . " ". $_SESSION['username'];
+
+?>
 
 
 <!DOCTYPE html>
