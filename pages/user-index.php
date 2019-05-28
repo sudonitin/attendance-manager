@@ -94,7 +94,7 @@
 		    </form>
 		  </div>
 	</nav><br>
-	<div class="container">
+	<div class="container" id="container">
 		<table class="table table-bordered" id="tab_logic" >
 		  <thead class="thead-light" >
 		    <tr>

@@ -3,7 +3,7 @@ var i=0;
 $(document).ready(function(){
      
      $("#add_row").click(function(){
-      $('#addr'+i).html("<td>"+ (i+1) +"</td><td><input class='input-md montime' id='montime-'"+i+" name='montime"+i+"' type='text' placeholder='' class='input-md form-control input-md'  /></td><td><input id='mon-'"+i+" class='input-md mon' name='mon"+i+"' type='text' placeholder=''  class='input-md form-control input-md'></td><td><input class='input-md tuetime' id='tuetime-'"+i+" name='tuetime"+i+"' type='text' placeholder=''  class='input-md form-control input-md'></td><td><input id='tue-'"+i+" class='input-md tue' name='tue"+i+"' type='text' placeholder=''  class='input-md form-control input-md'></td><td><input class='input-md wedtime' id='wedtime-'"+i+" name='wedtime"+i+"' type='text' placeholder=''  class='input-md form-control input-md'></td><td><input class='input-md wed' id='wed-'"+i+" name='wed"+i+"' type='text' placeholder=''  class='input-md form-control input-md'></td><td><input id='thutime-'"+i+" class='input-md thutime' name='thutime"+i+"' type='text' placeholder=''  class='input-md form-control input-md'></td><td><input class='input-md thu' id='thu-'"+i+"  name='thu"+i+"' type='text' placeholder=''  class='input-md form-control input-md'></td><td><input class='input-md fritime' id='fritime-'"+i+" name='fritime"+i+"' type='text' placeholder=''  class='input-md form-control input-md'></td><td><input id='fri-"+i+"' class='input-md fri' name='fri"+i+"' type='text' placeholder=''  class='input-md form-control input-md'></td>");
+      $('#addr'+i).html("<td>"+ (i+1) +"</td><td contenteditable='true' class='  montime' id='montime-'"+i+" name='montime"+i+"' type='text' placeholder='' class='  form-control  '></td><td contenteditable='true' id='mon-'"+i+" class='  mon' name='mon"+i+"' type='text' placeholder=''  class='  form-control  '></td><td contenteditable='true' class='  tuetime' id='tuetime-'"+i+" name='tuetime"+i+"' type='text' placeholder=''  class='  form-control  '></td><td contenteditable='true' id='tue-'"+i+" class='  tue' name='tue"+i+"' type='text' placeholder=''  class='  form-control  '></td><td contenteditable='true' class='  wedtime' id='wedtime-'"+i+" name='wedtime"+i+"' type='text' placeholder=''  class='  form-control  '></td><td contenteditable='true' class='  wed' id='wed-'"+i+" name='wed"+i+"' type='text' placeholder=''  class='  form-control  '></td><td contenteditable='true' id='thutime-'"+i+" class='  thutime' name='thutime"+i+"' type='text' placeholder=''  class='  form-control  '></td><td contenteditable='true' class='  thu' id='thu-'"+i+"  name='thu"+i+"' type='text' placeholder=''  class='  form-control  '></td><td contenteditable='true' class='  fritime' id='fritime-'"+i+" name='fritime"+i+"' type='text' placeholder=''  class='  form-control  '></td><td contenteditable='true' id='fri-"+i+"' class='  fri' name='fri"+i+"' type='text' placeholder=''  class='  form-control  '></td>");
 
       $('#tab_logic').append('<tr id="addr'+(i+1)+'"></tr>');
       i++;
@@ -22,35 +22,36 @@ $(document).ready(function(){
        var fri = [];
 
        $('.montime').each(function(){
-         montime.push($(this).val());
+         montime.push($(this).text());
        });
        $('.mon').each(function(){
-        mon.push($(this).val());
+        mon.push($(this).text());
       });
        $('.tuetime').each(function(){
-        tuetime.push($(this).val());
+        tuetime.push($(this).text());
       });
       $('.tue').each(function(){
-        tue.push($(this).val());
+        tue.push($(this).text());
       });
       $('.wedtime').each(function(){
-        wedtime.push($(this).val());
+        wedtime.push($(this).text());
       });
       $('.wed').each(function(){
-        wed.push($(this).val());
+        wed.push($(this).text());
       });
       $('.thutime').each(function(){
-        thutime.push($(this).val());
+        thutime.push($(this).text());
       });
       $('.thu').each(function(){
-        thu.push($(this).val());
+        thu.push($(this).text());
       });
       $('.fritime').each(function(){
-        fritime.push($(this).val());
+        fritime.push($(this).text());
       });
       $('.fri').each(function(){
-        //console.log($(this).val());
-        fri.push($(this).val());
+        //console.log($(this).text());
+        fri.push($(this).text());
+        //console.log($(this).text());
       });
 
       $.ajax({
@@ -59,10 +60,22 @@ $(document).ready(function(){
         data:{montime:montime, mon:mon, tuetime:tuetime, tue:tue, wedtime:wedtime, wed:wed, thutime:thutime, thu:thu, fritime:fritime,fri:fri},
         success:function(data){
          console.log(data); 
+         fetchdata();
         }
       });
 
      });
+
+     function fetchdata(){
+       $.ajax({
+         url: "fetch.php",
+         method: "POST",
+         success: function(data)
+         {
+           $('#container').html(data);
+         }
+       });
+     }
 });
 
 // function post(){
@@ -70,16 +83,16 @@ $(document).ready(function(){
 //   var montime,mon,tuetime,tue,wedtime,wed,thutime,thu,fritime,fri;
 //   //start loop here
 //   // for(var j=0; j<=i; j++){
-//   //   montime = $("#montime-"+i).val();
-//   //   mon = $("#mon-"+i).val();
-//   //   tuetime = $("#tuetime-"+i).val();
-//   //   tue = $("#tue-"+i).val();
-//   //   wedtime = $("#wedtime-"+i).val();
-//   //   wed = $("#wed-"+i).val();
-//   //   thutime = $("#thutime-"+i).val();
-//   //   thu = $("#thu-"+i).val();
-//   //   fritime = $("#fritime-"+i).val();
-//   //   fri = $("#fri-"+i).val();
+//   //   montime = $("#montime-"+i).text();
+//   //   mon = $("#mon-"+i).text();
+//   //   tuetime = $("#tuetime-"+i).text();
+//   //   tue = $("#tue-"+i).text();
+//   //   wedtime = $("#wedtime-"+i).text();
+//   //   wed = $("#wed-"+i).text();
+//   //   thutime = $("#thutime-"+i).text();
+//   //   thu = $("#thu-"+i).text();
+//   //   fritime = $("#fritime-"+i).text();
+//   //   fri = $("#fri-"+i).text();
 //   //   //console.log(fri);
 //   //   $.post('content.php', {postmontime: montime, postmon: mon, posttuetime: tuetime, posttue: tue, postwedtime: wedtime, postwed: wed, postthutime: thutime, postthu: thu, postfritime: fritime, postfri: fri},
 //   //   function(data){
@@ -89,16 +102,16 @@ $(document).ready(function(){
       
 //   // }
 
-//   montime = $("#montime-"+i).val();
-//   mon = $("#mon-"+i).val();
-//   tuetime = $("#tuetime-"+i).val();
-//   tue = $("#tue-"+i).val();
-//   wedtime = $("#wedtime-"+i).val();
-//   wed = $("#wed-"+i).val();
-//   thutime = $("#thutime-"+i).val();
-//   thu = $("#thu-"+i).val();
-//   fritime = $("#fritime-"+i).val();
-//   fri = $("#fri-"+i).val();
+//   montime = $("#montime-"+i).text();
+//   mon = $("#mon-"+i).text();
+//   tuetime = $("#tuetime-"+i).text();
+//   tue = $("#tue-"+i).text();
+//   wedtime = $("#wedtime-"+i).text();
+//   wed = $("#wed-"+i).text();
+//   thutime = $("#thutime-"+i).text();
+//   thu = $("#thu-"+i).text();
+//   fritime = $("#fritime-"+i).text();
+//   fri = $("#fri-"+i).text();
 //   var tt = {};
 //   tt.montime = montime;
 //   tt.mon = mon;
