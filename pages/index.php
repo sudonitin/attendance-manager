@@ -97,8 +97,9 @@ if (isset($_POST['signin'])) {
 			            $_SESSION['logged_in'] = "active";
 			            $_SESSION['email'] = $email;
 									$_SESSION['username'] = $name;
-			            // header("location: ./user-index.php");
-			            echo "<script type = \"text/javascript\">alert('welcome, u have successfully registered..!!');</script>";            
+									$_SESSION['id'] = $row['usrid'];
+									echo "<script type = \"text/javascript\">alert('welcome, u have successfully registered..!!');</script>";            
+									header("location: ./user-index.php");
 			          }
 			          mysqli_stmt_close($stmt);
 			        }

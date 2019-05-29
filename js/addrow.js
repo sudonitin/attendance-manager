@@ -61,6 +61,7 @@ $(document).ready(function(){
         success:function(data){
          console.log(data); 
          fetchdata();
+         location.reload();
         }
       });
 
@@ -76,60 +77,6 @@ $(document).ready(function(){
          }
        });
      }
+
+     //fetchdata()  ;
 });
-
-// function post(){
-//   i -= 1;
-//   var montime,mon,tuetime,tue,wedtime,wed,thutime,thu,fritime,fri;
-//   //start loop here
-//   // for(var j=0; j<=i; j++){
-//   //   montime = $("#montime-"+i).text();
-//   //   mon = $("#mon-"+i).text();
-//   //   tuetime = $("#tuetime-"+i).text();
-//   //   tue = $("#tue-"+i).text();
-//   //   wedtime = $("#wedtime-"+i).text();
-//   //   wed = $("#wed-"+i).text();
-//   //   thutime = $("#thutime-"+i).text();
-//   //   thu = $("#thu-"+i).text();
-//   //   fritime = $("#fritime-"+i).text();
-//   //   fri = $("#fri-"+i).text();
-//   //   //console.log(fri);
-//   //   $.post('content.php', {postmontime: montime, postmon: mon, posttuetime: tuetime, posttue: tue, postwedtime: wedtime, postwed: wed, postthutime: thutime, postthu: thu, postfritime: fritime, postfri: fri},
-//   //   function(data){
-//   //     console.log("working" + data);
-//   //   }
-//   //   );
-      
-//   // }
-
-//   montime = $("#montime-"+i).text();
-//   mon = $("#mon-"+i).text();
-//   tuetime = $("#tuetime-"+i).text();
-//   tue = $("#tue-"+i).text();
-//   wedtime = $("#wedtime-"+i).text();
-//   wed = $("#wed-"+i).text();
-//   thutime = $("#thutime-"+i).text();
-//   thu = $("#thu-"+i).text();
-//   fritime = $("#fritime-"+i).text();
-//   fri = $("#fri-"+i).text();
-//   var tt = {};
-//   tt.montime = montime;
-//   tt.mon = mon;
-//   tt.tuetime = tuetime;
-//   tt.tue = tue;
-//   tt.wedtime = wedtime;
-//   tt.wedtime = wed;
-//   tt.thutime = thutime;
-//   tt.thu = thu;
-//   tt.fritime = fritime;
-//   tt.fri = fri; 
-//   $.ajax({
-//     url: "content.php",
-//     method: "post",
-//     data: tt,
-//     success: function(data){
-//       console.log(data);
-//     }
-//   })
-//   i += 1;
-// }

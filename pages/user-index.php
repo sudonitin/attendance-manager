@@ -1,7 +1,7 @@
 <?php
 
 	session_start();
-	echo $_SESSION['id'] . " ". $_SESSION['username'];
+	//echo $_SESSION['id'] . " ". $_SESSION['username'];
 
 ?>
 
@@ -89,7 +89,7 @@
 		        <a class="nav-link" id="aboutus" href="#" onClick="return false" onmousedown = "javascript:content('aboutus');">Change timetable <span class="sr-only">(current)</span></a>
 		      </li>
 		    </ul>
-		    <form class="form-inline my-2 my-lg-0">
+		    <form class="form-inline my-2 my-lg-0" action="./signout.php">
 		      <button class="mybtn btn btn-outline-danger my-sm-0" type="submit">logout</button>
 		    </form>
 		  </div>
@@ -128,9 +128,6 @@
 
 		Copyright 2019 <a href="#">@TechZone</a>
 	</footer> -->
-		<script>
-		  
-		</script>
-		
+
 </body>
 </html>
