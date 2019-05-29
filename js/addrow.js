@@ -61,7 +61,7 @@ $(document).ready(function(){
         success:function(data){
          console.log(data); 
          fetchdata();
-         location.reload();
+         //location.reload();
         }
       });
 
