@@ -1,11 +1,18 @@
 <?php
-
-	session_start();
-	//echo $_SESSION['id'] . " ". $_SESSION['username'];
-
+// error_reporting(0);
+// ini_set('display_errors', 0);
+session_start();
+//echo $_SESSION['id'];
+$serverqur = "localhost";
+$userqur = "root";
+$password = "";
+$db = "attendance";
+// Create connection
+$conn = mysqli_connect($serverqur, $userqur, $password, $db);
+if (!$conn) {
+die("Connection failed: " . mysqli_connect_error());
+}
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +26,9 @@
   <link rel="stylesheet" type="text/css" href="../css/index.css">
   <script type="text/javascript" src="../js/index.js"></script>
   <script type="text/javascript" src="../js/addrow.js"></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 
 <div id="particlecode">
 	<div id="particles-js" style="z-index: -1;" ></div>
@@ -73,6 +82,7 @@
 		
 	
 <body onload="logo()">
+
 	<nav class="navbar navbar-dark navbar-expand-lg" style="background-color: #3b4237; width: 100%; margin: 0;">
 		  <a class="navbar-brand" href="#" onClick="return false" onmousedown = "javascript:content('default');">
 		  	<img src="../images/logo.jpg" id="logo" width="50" height="50" /> <span style="color: #ef8b00; font-weight: bold">Tech</span><span style="font-weight: bold">Zone</span>
@@ -95,7 +105,7 @@
 		  </div>
 	</nav><br>
 	<div class="container" id="container">
-		<table class="table table-bordered" id="tab_logic" >
+		<table class="table table-bordered" id="tab_logic" style="display: none;">
 		  <thead class="thead-light" >
 		    <tr>
 		      <th scope="col">#</th>
@@ -129,5 +139,94 @@
 		Copyright 2019 <a href="#">@TechZone</a>
 	</footer> -->
 
+	<?php
+	
+	
+			$output = '';
+			$qur = 'SELECT * FROM timetable WHERE id= "'.$_SESSION["id"].'"';
+			$result = mysqli_query($conn, $qur);
+			$tmp = mysqli_fetch_array($result);
+			//echo 'hi'. sizeof($tmp);
+			if (!sizeof($tmp)) {
+				echo "	
+		            <script type = \"text/javascript\">
+								var montime = [];
+								var mon = [];
+								var tuetime = [];
+								var tue = [];
+								var wedtime = [];
+								var wed = [];
+								var thutime = [];
+								var thu = [];
+								var fritime = [];
+								var fri = [];
+				 
+								$('.montime').each(function(){
+									montime.push($(this).text());
+								});
+								$('.mon').each(function(){
+								 mon.push($(this).text());
+							 });
+								$('.tuetime').each(function(){
+								 tuetime.push($(this).text());
+							 });
+							 $('.tue').each(function(){
+								 tue.push($(this).text());
+							 });
+							 $('.wedtime').each(function(){
+								 wedtime.push($(this).text());
+							 });
+							 $('.wed').each(function(){
+								 wed.push($(this).text());
+							 });
+							 $('.thutime').each(function(){
+								 thutime.push($(this).text());
+							 });
+							 $('.thu').each(function(){
+								 thu.push($(this).text());
+							 });
+							 $('.fritime').each(function(){
+								 fritime.push($(this).text());
+							 });
+							 $('.fri').each(function(){
+								 //console.log($(this).text());
+								 fri.push($(this).text());
+								 //console.log($(this).text());
+							 });
+				 
+							 $.ajax({
+								 url: 'content.php',
+								 method: 'POST',
+								 data:{montime:montime, mon:mon, tuetime:tuetime, tue:tue, wedtime:wedtime, wed:wed, thutime:thutime, thu:thu, fritime:fritime,fri:fri},
+								 success:function(data){
+									console.log(data);
+								 }
+							 });
+		            </script>
+		            ";
+			}
+			else{
+				echo "
+								<style>
+								#tab_logic{
+									display: none;
+								}
+							</style>
+							<script type = \"text/javascript\">
+							$.ajax({
+								url: \"fetch.php\",
+								method: \"POST\",
+								success: function(data)
+								{
+									$('#container').html(data);
+									
+								}
+							});
+							</script>
+				";
+			}
+	
+?>
 </body>
 </html>
+

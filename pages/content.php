@@ -1,6 +1,6 @@
 <?php 
             session_start();
-            //echo $_SESSION['id'] . " ". $_SESSION['username'];
+            echo $_SESSION['id'] . " ". $_SESSION['username'];
             $servername = "localhost";
             $username = "root";
             $password = "";

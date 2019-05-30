@@ -1,7 +1,7 @@
 var i=0;
 
 $(document).ready(function(){
-     
+     //fetchdata();
      $("#add_row").click(function(){
       $('#addr'+i).html("<td>"+ (i+1) +"</td><td contenteditable='true' class='  montime' id='montime-'"+i+" name='montime"+i+"' type='text' placeholder='' class='  form-control  '></td><td contenteditable='true' id='mon-'"+i+" class='  mon' name='mon"+i+"' type='text' placeholder=''  class='  form-control  '></td><td contenteditable='true' class='  tuetime' id='tuetime-'"+i+" name='tuetime"+i+"' type='text' placeholder=''  class='  form-control  '></td><td contenteditable='true' id='tue-'"+i+" class='  tue' name='tue"+i+"' type='text' placeholder=''  class='  form-control  '></td><td contenteditable='true' class='  wedtime' id='wedtime-'"+i+" name='wedtime"+i+"' type='text' placeholder=''  class='  form-control  '></td><td contenteditable='true' class='  wed' id='wed-'"+i+" name='wed"+i+"' type='text' placeholder=''  class='  form-control  '></td><td contenteditable='true' id='thutime-'"+i+" class='  thutime' name='thutime"+i+"' type='text' placeholder=''  class='  form-control  '></td><td contenteditable='true' class='  thu' id='thu-'"+i+"  name='thu"+i+"' type='text' placeholder=''  class='  form-control  '></td><td contenteditable='true' class='  fritime' id='fritime-'"+i+" name='fritime"+i+"' type='text' placeholder=''  class='  form-control  '></td><td contenteditable='true' id='fri-"+i+"' class='  fri' name='fri"+i+"' type='text' placeholder=''  class='  form-control  '></td>");
 
@@ -74,9 +74,14 @@ $(document).ready(function(){
          success: function(data)
          {
            $('#container').html(data);
+           
          }
        });
      }
 
+
+    //  setInterval(() => {
+    //    console.log('hi');
+    //  }, 5000);
      //fetchdata()  ;
 });

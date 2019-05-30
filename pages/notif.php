@@ -23,7 +23,7 @@
                 }
             });
 
-            <?php $i = 'hello :) world'?>
+            <?php $i = 'hello :) world'; $j = 0;?>
 
             trig.addEventListener('click', function(e){
                 var notify;
@@ -40,11 +40,20 @@
             
             setInterval(() => {
                 var d = new Date();
-                if (d.getHours() == 20 && d.getMinutes() == 47) {
-                    alert("mf");
+                if (d.getHours() == 22 && d.getMinutes() == 20) {
+                    var notify;
+                    //e.preventDefault();
+
+                    if (Notification.permission === 'default') {
+                        alert('allow me')
+                    } else {
+                        notify = new Notification("<?php echo $i; ?>");
+
+                    }
                 }
-                    console.log('<?php echo $i?>');
-                }, 3000);
+                    console.log("<?php echo $i . $j;?>");
+                    <?php $j += 1; ?>
+                }, 5000);
 
         </script>
 
