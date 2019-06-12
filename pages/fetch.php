@@ -37,9 +37,11 @@ else{
 		  </thead>
           <tbody>
             <?php 
+                $wedtime = [];
                 while($row = mysqli_fetch_array($result)) {
                     # code...
                 $i += 1;
+                array_push($wedtime, $row['wedtime']);
             ?>
             <tr>
                 <td> <?php echo $i?></td>

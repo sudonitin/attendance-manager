@@ -67,17 +67,22 @@ $(document).ready(function(){
 
      });
 
-     function fetchdata(){
+    function fetchdata(){
        $.ajax({
          url: "fetch.php",
          method: "POST",
          success: function(data)
          {
+          console.log(data);
            $('#container').html(data);
            
          }
        });
-     }
+
+       console.log('hello');
+
+     
+      }
 
 
     //  setInterval(() => {

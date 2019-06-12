@@ -2,7 +2,7 @@
 // error_reporting(0);
 // ini_set('display_errors', 0);
 session_start();
-//echo $_SESSION['id'];
+echo $_SESSION['id'];
 $serverqur = "localhost";
 $userqur = "root";
 $password = "";
@@ -105,7 +105,7 @@ die("Connection failed: " . mysqli_connect_error());
 		  </div>
 	</nav><br>
 	<div class="container" id="container">
-		<table class="table table-bordered" id="tab_logic" style="display: none;">
+		<table class="table table-bordered" id="tab_logic" >
 		  <thead class="thead-light" >
 		    <tr>
 		      <th scope="col">#</th>
@@ -146,11 +146,12 @@ die("Connection failed: " . mysqli_connect_error());
 			$qur = 'SELECT * FROM timetable WHERE id= "'.$_SESSION["id"].'"';
 			$result = mysqli_query($conn, $qur);
 			$tmp = mysqli_fetch_array($result);
-			//echo 'hi'. sizeof($tmp);
-			if (!sizeof($tmp)) {
+			echo "hello";
+			//echo sizeof($tmp);
+			if (sizeof($tmp) == 0) {
 				echo "	
 		            <script type = \"text/javascript\">
-								var montime = [];
+								var montime = [];	
 								var mon = [];
 								var tuetime = [];
 								var tue = [];
@@ -195,11 +196,12 @@ die("Connection failed: " . mysqli_connect_error());
 							 });
 				 
 							 $.ajax({
-								 url: 'content.php',
-								 method: 'POST',
+								 url: \"content.php\",
+								 method: \"POST\",
 								 data:{montime:montime, mon:mon, tuetime:tuetime, tue:tue, wedtime:wedtime, wed:wed, thutime:thutime, thu:thu, fritime:fritime,fri:fri},
 								 success:function(data){
 									console.log(data);
+									
 								 }
 							 });
 		            </script>
