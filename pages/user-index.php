@@ -278,15 +278,25 @@ die("Connection failed: " . mysqli_connect_error());
 									 fri.push($(this).text());
 									 //console.log($(this).text());
 								 });
-									
+								 function disp(){
+									console.log('nitin sahu');
+								}
+								setInterval(disp, 1000);
 								}
 							});
-
+							
 							</script>
 				";
 			}
 	
 ?>
+<script type='text/javascript'> 
+	// console.log('hello nitin');
+	// function disp(){
+	// 	console.log('nitin sahu');
+	// }
+	// setInterval(disp, 1000);
+</script>
 </body>
 </html>
 

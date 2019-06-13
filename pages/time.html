@@ -1,0 +1,51 @@
+<html>
+    <body>
+        <center id="cen">
+        </center>
+        <center>
+            <h1 id='c'></h1><br>
+            <h1 id='s'></h1>
+        </center>
+        <center id='cen2'>
+        </center>
+    </body>
+    <script>
+        function timec(){
+            var a = new Date();
+            var c = ['11:42:20','11:42:00'];
+            var s;
+            document.getElementById('c').textContent = c;
+            if(a.getHours()<10){
+                s = '0'+a.getHours();
+            }
+            else{
+                s = a.getHours();
+            }
+
+            if(a.getMinutes()<10){
+                s += ':0'+a.getMinutes();
+            }
+            else{
+                s += ':'+a.getMinutes();
+            }
+
+            if(a.getSeconds()<10){
+                s += ':0'+a.getSeconds();
+            }
+            else{
+                s+=':'+a.getSeconds();
+            }
+            document.getElementById('s').textContent = s;
+            if(c.includes(s)){
+                document.getElementById('cen2').textContent = 'success';
+                document.getElementById('cen').textContent = '';
+            }
+            else{
+                document.getElementById('cen').textContent = 'fail';
+                document.getElementById('cen2').textContent = '';
+            }
+        }
+
+        setInterval(timec, 1000);
+    </script>
+</html>
