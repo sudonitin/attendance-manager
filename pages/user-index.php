@@ -146,11 +146,24 @@ die("Connection failed: " . mysqli_connect_error());
 			$qur = 'SELECT * FROM timetable WHERE id= "'.$_SESSION["id"].'"';
 			$result = mysqli_query($conn, $qur);
 			$tmp = mysqli_fetch_array($result);
-			echo "hello";
-			//echo sizeof($tmp);
+			// echo sizeof($tmp);
 			if (sizeof($tmp) == 0) {
 				echo "	
-		            <script type = \"text/javascript\">
+					<script type = \"text/javascript\">
+					
+					function fetchdata(){
+						$.ajax({
+						  url: \"fetch.php\",
+						  method: \"POST\",
+						  success: function(data)
+						  {
+						   console.log(data);
+							$('#container').html(data);
+							
+						  }
+						});
+					  
+					   }
 								var montime = [];	
 								var mon = [];
 								var tuetime = [];
@@ -203,6 +216,7 @@ die("Connection failed: " . mysqli_connect_error());
 									console.log(data);
 									
 								 }
+								 fetchdata();
 							 });
 		            </script>
 		            ";
@@ -226,6 +240,7 @@ die("Connection failed: " . mysqli_connect_error());
 							});
 							</script>
 				";
+				header("Refresh:0");
 			}
 	
 ?>

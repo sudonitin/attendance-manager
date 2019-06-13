@@ -74,19 +74,9 @@ $(document).ready(function(){
          success: function(data)
          {
           console.log(data);
-           $('#container').html(data);
-           
+           $('#container').html(data); 
          }
-       });
-
-       console.log('hello');
-
-     
+       });     
       }
 
-
-    //  setInterval(() => {
-    //    console.log('hi');
-    //  }, 5000);
-     //fetchdata()  ;
 });

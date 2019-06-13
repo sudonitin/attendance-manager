@@ -97,12 +97,23 @@ if (isset($_POST['signin'])) {
 			            $_SESSION['logged_in'] = "active";
 			            $_SESSION['email'] = $email;
 									$_SESSION['username'] = $name;
-									$_SESSION['id'] = $row['usrid'];
+									// $_SESSION['id'] = $row['usrid'];
 									echo "<script type = \"text/javascript\">alert('welcome, u have successfully registered..!!');</script>";            
 									header("location: ./user-index.php");
-			          }
-			          mysqli_stmt_close($stmt);
-			        }
+								}
+								$id_query = "SELECT * FROM users WHERE username = ?";
+
+								if ($idstmt = mysqli_prepare($conn, $id_query)) {
+									# code...
+									// echo "hello";
+									mysqli_stmt_bind_param($idstmt, 's', $name);
+									mysqli_stmt_execute($idstmt);
+									$id_result = mysqli_stmt_get_result($idstmt);
+									$idrow = mysqli_fetch_array($id_result, MYSQLI_BOTH);
+									$_SESSION['id'] = $idrow['usrid'];
+											mysqli_stmt_close($stmt);
+										}
+						}
 			          else{
 			            echo "<script type = \"text/javascript\">alert('passwords did not match.');</script>";  
 			            }
