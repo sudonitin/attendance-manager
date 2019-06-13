@@ -1,6 +1,6 @@
 <?php
-// error_reporting(0);
-// ini_set('display_errors', 0);
+error_reporting(0);
+ini_set('display_errors', 0);
 session_start();
 echo $_SESSION['id'];
 $serverqur = "localhost";
@@ -235,12 +235,55 @@ die("Connection failed: " . mysqli_connect_error());
 								success: function(data)
 								{
 									$('#container').html(data);
+									var montime = [];	
+									var mon = [];
+									var tuetime = [];
+									var tue = [];
+									var wedtime = [];
+									var wed = [];
+									var thutime = [];
+									var thu = [];
+									var fritime = [];
+									var fri = [];
+					 
+									$('.montime').each(function(){
+										montime.push($(this).text());
+									});
+									$('.mon').each(function(){
+									 mon.push($(this).text());
+								 });
+									$('.tuetime').each(function(){
+									 tuetime.push($(this).text());
+								 });
+								 $('.tue').each(function(){
+									 tue.push($(this).text());
+								 });
+								 $('.wedtime').each(function(){
+									 wedtime.push($(this).text());
+								 });
+								 $('.wed').each(function(){
+									 wed.push($(this).text());
+								 });
+								 $('.thutime').each(function(){
+									 thutime.push($(this).text());
+									 console.log($(this).text());
+								 });
+								 $('.thu').each(function(){
+									 thu.push($(this).text());
+								 });
+								 $('.fritime').each(function(){
+									 fritime.push($(this).text());
+								 });
+								 $('.fri').each(function(){
+									 fri.push($(this).text());
+									 //console.log($(this).text());
+								 });
 									
 								}
 							});
+
 							</script>
 				";
-				header("Refresh:0");
 			}
 	
 ?>

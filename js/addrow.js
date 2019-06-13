@@ -73,8 +73,8 @@ $(document).ready(function(){
          method: "POST",
          success: function(data)
          {
-          console.log(data);
            $('#container').html(data); 
+           console.log('hello');
          }
        });     
       }
