@@ -28,17 +28,17 @@
 
         function timec(){
             var a = new Date();
-            var wc = ['13:27:00','13:27:15'];
+            var wc = ['21:06:40','13:27:15'];
             var wca = ['geometry','algebra'];
             var c = ['13:16:40','13:16:55'];
             var ca = ['maths','science'];
             var s;
             if(a.getDay() == 4){
-                console.log('hell');
+                // console.log('hell');
                 var tmp = wc;
                 var tmpa = wca;
             }
-            document.getElementById('c').textContent = c;
+            document.getElementById('c').textContent = tmp;
             if(a.getHours()<10){
                 s = '0'+a.getHours();
             }

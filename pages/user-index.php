@@ -104,6 +104,16 @@ die("Connection failed: " . mysqli_connect_error());
 		    </form>
 		  </div>
 	</nav><br>
+
+	<center id="cen">
+	</center>
+	<center>
+		<h1 id='c'></h1><br>
+		<h1 id='s'></h1>
+	</center>
+	<center id='cen2'>
+	</center>
+
 	<div class="container" id="container">
 		<table class="table table-bordered" id="tab_logic" >
 		  <thead class="thead-light" >
@@ -266,7 +276,7 @@ die("Connection failed: " . mysqli_connect_error());
 								 });
 								 $('.thutime').each(function(){
 									 thutime.push($(this).text());
-									 console.log($(this).text());
+									//  console.log($(this).text());
 								 });
 								 $('.thu').each(function(){
 									 thu.push($(this).text());
@@ -278,11 +288,93 @@ die("Connection failed: " . mysqli_connect_error());
 									 fri.push($(this).text());
 									 //console.log($(this).text());
 								 });
-								 function disp(){
-									console.log('nitin sahu');
-								}
-								setInterval(disp, 1000);
-								}
+
+
+								//  window.onload = function(e){
+								// 	e.preventDefault();
+						
+								// 	if(!window.Notification){
+								// 		alert('not supported');
+								// 	} else {
+								// 		Notification.requestPermission(function(p){
+								// 			if (p === 'denied') {
+								// 				alert('u hav denied notifications');
+								// 			} else if (p === 'granted') {
+								// 				alert('granted');
+								// 			}
+								// 		});
+								// 	}
+								// }
+						
+								// function timec(){
+								// 	var a = new Date();
+								// 	// var wc = ['13:27:00','13:27:15'];
+								// 	// var wca = ['geometry','algebra'];
+								// 	// var c = ['13:16:40','13:16:55'];
+								// 	// var ca = ['maths','science'];
+								// 	var s;
+								// 	if(a.getDay() == 1){
+								// 		var tmp = montime;
+								// 		var tmpa = mon;
+								// 	}
+								// 	if(a.getDay() == 2){
+								// 		var tmp = tuetime;
+								// 		var tmpa = tue;
+								// 	}
+								// 	if(a.getDay() == 3){
+								// 		var tmp = wedtime;
+								// 		var tmpa = wed;
+								// 	}
+								// 	if(a.getDay() == 4){
+								// 		var tmp = thutime;
+								// 		var tmpa = thu;
+								// 	}
+								// 	if(a.getDay() == 5){
+								// 		var tmp = fritime;
+								// 		var tmpa = fri;
+								// 	}
+								// 	document.getElementById('c').textContent = tmp;
+								// 	if(a.getHours()<10){
+								// 		s = '0'+a.getHours();
+								// 	}
+								// 	else{
+								// 		s = a.getHours();
+								// 	}
+						
+								// 	if(a.getMinutes()<10){
+								// 		s += ':0'+a.getMinutes();
+								// 	}
+								// 	else{
+								// 		s += ':'+a.getMinutes();
+								// 	}
+						
+								// 	if(a.getSeconds()<10){
+								// 		s += ':0'+a.getSeconds();
+								// 	}
+								// 	else{
+								// 		s+=':'+a.getSeconds();
+								// 	}
+								// 	document.getElementById('s').textContent = s;
+								// 	if(tmp.includes(s)){
+								// 		document.getElementById('cen2').textContent = 'success';
+								// 		document.getElementById('cen').textContent = '';
+								// 		if (Notification.permission === 'default') {
+								// 			alert('allow me')
+								// 		} else {
+								// 			notify = new Notification('You have '+ tmpa[tmp.indexOf(s)] + ' lecture.');
+						
+								// 		}
+								// 	}
+								// 	else{
+								// 		document.getElementById('cen').textContent = 'fail';
+								// 		document.getElementById('cen2').textContent = '';
+								// 	}
+								// }
+						
+								// setInterval(timec, 1000);
+
+
+							}
 							});
 							
 							</script>
@@ -291,11 +383,126 @@ die("Connection failed: " . mysqli_connect_error());
 	
 ?>
 <script type='text/javascript'> 
-	// console.log('hello nitin');
-	// function disp(){
-	// 	console.log('nitin sahu');
-	// }
-	// setInterval(disp, 1000);
+	window.onload = function(){
+		var montime = [];	
+		var mon = [];
+		var tuetime = [];
+		var tue = [];
+		var wedtime = [];
+		var wed = [];
+		var thutime = [];
+		var thu = [];
+		var fritime = [];
+		var fri = [];
+
+		$('.montime').each(function(){
+			montime.push($(this).text());
+		});
+		$('.mon').each(function(){
+			mon.push($(this).text());
+		});
+		$('.tuetime').each(function(){
+			tuetime.push($(this).text());
+		});
+		$('.tue').each(function(){
+			tue.push($(this).text());
+		});
+		$('.wedtime').each(function(){
+			wedtime.push($(this).text());
+		});
+		$('.wed').each(function(){
+			wed.push($(this).text());
+		});
+		$('.thutime').each(function(){
+			thutime.push($(this).text());
+			console.log($(this).text());
+		});
+		$('.thu').each(function(){
+			thu.push($(this).text());
+		});
+		$('.fritime').each(function(){
+			fritime.push($(this).text());
+		});
+		$('.fri').each(function(){
+			fri.push($(this).text());
+			//console.log($(this).text());
+		});
+		function timec(){
+			var a = new Date();
+			// var wc = ['13:27:00','13:27:15'];
+			// var wca = ['geometry','algebra'];
+			// var c = ['13:16:40','13:16:55'];
+			// var ca = ['maths','science'];
+			var s;
+			if(a.getDay() == 1){
+				var tmp = montime;
+				var tmpa = mon;
+			}
+			if(a.getDay() == 2){
+				var tmp = tuetime;
+				var tmpa = tue;
+			}
+			if(a.getDay() == 3){
+				var tmp = wedtime;
+				var tmpa = wed;
+			}
+			if(a.getDay() == 4){
+				var tmp = thutime;
+				var tmpa = thu;
+			}
+			if(a.getDay() == 5){
+				var tmp = fritime;
+				var tmpa = fri;
+			}
+			document.getElementById('c').textContent = tmp;
+			if(a.getHours()<10){
+				s = '0'+a.getHours();
+			}
+			else{
+				s = a.getHours();
+			}
+
+			if(a.getMinutes()<10){
+				s += ':0'+a.getMinutes();
+			}
+			else{
+				s += ':'+a.getMinutes();
+			}
+
+			if(a.getSeconds()<10){
+				s += ':0'+a.getSeconds();
+			}
+			else{
+				s+=':'+a.getSeconds();
+			}
+			document.getElementById('s').textContent = s;
+
+			for (let index = 0; index < tmp.length; index++) {
+				if (tmp[index] == s) {
+					flag = 1;
+				}
+			}
+			console.log(flag);
+			if(flag==1){
+				document.getElementById('cen2').textContent = 'success';
+				document.getElementById('cen').textContent = '';
+				// if (Notification.permission === 'default') {
+				// 	alert('allow me')
+				// } else {
+				// 	notify = new Notification('You have '+ tmpa[tmp.indexOf(s)] + ' lecture.');
+
+				// }
+				flag = 0;
+			}
+			else{
+				document.getElementById('cen').textContent = 'fail';
+				document.getElementById('cen2').textContent = '';
+			}
+		}
+
+		setInterval(timec, 1000);
+
+	}
 </script>
 </body>
 </html>
