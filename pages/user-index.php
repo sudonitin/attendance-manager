@@ -388,10 +388,10 @@ die("Connection failed: " . mysqli_connect_error());
 			s = s.toString();
 			document.getElementById('s').textContent = s;
 			tmp = tmp.map(String);
-			console.log(tmp);
-			k = " "+s+" ";
-			console.log(tmp.indexOf(k));
-			var x = tmp.toString();
+			// console.log(tmp);
+			k = " "+s+" "; //this line made the notification feature successful
+			// console.log(tmp.indexOf(k));
+			var x = tmp.toString(); ////this line made the notification feature successful
 			if(x.search(s)>0){
 
 				document.getElementById('cen2').textContent = 'success';
