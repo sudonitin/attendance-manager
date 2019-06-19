@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2019 at 08:02 PM
+-- Generation Time: Jun 19, 2019 at 02:30 PM
 -- Server version: 10.1.34-MariaDB
 -- PHP Version: 7.2.7
 
@@ -39,17 +39,20 @@ CREATE TABLE `timetable` (
   `thu` varchar(50) DEFAULT NULL,
   `fritime` time DEFAULT NULL,
   `fri` varchar(50) DEFAULT NULL,
-  `sat` varchar(50) DEFAULT NULL,
-  `sun` varchar(50) DEFAULT NULL,
-  `id` int(100) NOT NULL
+  `id` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `timetable`
 --
 
-INSERT INTO `timetable` (`montime`, `mon`, `tuetime`, `tue`, `wedtime`, `wed`, `thutime`, `thu`, `fritime`, `fri`, `sat`, `sun`, `id`) VALUES
-(NULL, NULL, '01:30:00', 'spcc', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5);
+INSERT INTO `timetable` (`montime`, `mon`, `tuetime`, `tue`, `wedtime`, `wed`, `thutime`, `thu`, `fritime`, `fri`, `id`) VALUES
+('00:00:00', '', '00:00:00', '', '17:35:00', 'maths', '00:00:00', '', '00:00:00', '', 40),
+('00:00:00', '', '00:00:00', '', '17:40:00', 'algebra', '00:00:00', '', '00:00:00', '', 40),
+('00:00:00', '', '00:00:00', '', '17:43:45', 'geometry', '00:00:00', '', '00:00:00', '', 41),
+('00:00:00', '', '00:00:00', '', '17:44:00', 'oopm', '00:00:00', '', '00:00:00', '', 41),
+('00:00:00', '', '00:00:00', '', '00:00:00', '17:47', '00:00:00', '', '00:00:00', '', 42),
+('00:00:00', '', '00:00:00', '', '17:48:00', 'hindi', '00:00:00', '', '00:00:00', '', 43);
 
 -- --------------------------------------------------------
 
@@ -70,17 +73,14 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`usrid`, `username`, `email`, `password`) VALUES
 (1, 'nitin', 'sahun577@gmail.com', 'a152e841783914146e4bcd4f39100686'),
-(5, 'nitins', 'sahun5774@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4');
+(40, 'globefire', 'sahun5774@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4'),
+(41, 'male', 'abc@gmail.com', 'd8578edf8458ce06fbc5bb76a58c5ca4'),
+(42, 'iron', 'ironman@marvel.in', 'd8578edf8458ce06fbc5bb76a58c5ca4'),
+(43, 'logan', 'logan@dc.in', 'd8578edf8458ce06fbc5bb76a58c5ca4');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `timetable`
---
-ALTER TABLE `timetable`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -98,7 +98,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `usrid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `usrid` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

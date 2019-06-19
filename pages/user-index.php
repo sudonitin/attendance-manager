@@ -26,7 +26,9 @@ die("Connection failed: " . mysqli_connect_error());
   <link rel="stylesheet" type="text/css" href="../css/index.css">
   <script type="text/javascript" src="../js/index.js"></script>
   <script type="text/javascript" src="../js/addrow.js"></script>
-
+	<style>
+		
+	</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
@@ -105,14 +107,15 @@ die("Connection failed: " . mysqli_connect_error());
 		  </div>
 	</nav><br>
 
-	<center id="cen">
+	<!-- notification experiment -->
+	<!-- <center id="cen">
 	</center>
 	<center>
 		<h1 id='c'></h1><br>
 		<h1 id='s'></h1>
 	</center>
 	<center id='cen2'>
-	</center>
+	</center> -->
 
 	<div class="container" id="container">
 		<table class="table table-bordered" id="tab_logic" >
@@ -351,7 +354,7 @@ die("Connection failed: " . mysqli_connect_error());
 				var tmp = fritime;
 				var tmpa = fri;
 			}
-			document.getElementById('c').textContent = tmp+tmpa;
+			// document.getElementById('c').textContent = tmp+tmpa; array of time and subject of today's
 
 			if(a.getHours()<10){
 				s = '0'+a.getHours();
@@ -374,12 +377,12 @@ die("Connection failed: " . mysqli_connect_error());
 				s+=':'+a.getSeconds();
 			}
 			s = s.toString();
-			document.getElementById('s').textContent = s;
+			// document.getElementById('s').textContent = s; current time
 			tmp = tmp.map(String);
 			// console.log(tmp);
 			k = " "+s+" "; //this line made the notification feature successful
 			// console.log(tmp.indexOf(k));
-			var x = tmp.toString(); ////this line made the notification feature successful
+			var x = tmp.toString(); //this line made the notification feature successful
 			if(x.search(s)>0){
 
 				document.getElementById('cen2').textContent = 'success';
