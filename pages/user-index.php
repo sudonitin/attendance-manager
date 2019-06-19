@@ -160,18 +160,6 @@ die("Connection failed: " . mysqli_connect_error());
 			if (sizeof($tmp) == 0) {
 				echo "	
 					<script type = \"text/javascript\">
-					
-					function fetchdata(){
-						$.ajax({
-						  url: \"fetch.php\",
-						  method: \"POST\",
-						  success: function(data)
-						  {
-						   console.log(data);
-							$('#container').html(data);
-							
-						  }
-						});
 					  
 					   }
 								var montime = [];	
@@ -224,7 +212,7 @@ die("Connection failed: " . mysqli_connect_error());
 								 data:{montime:montime, mon:mon, tuetime:tuetime, tue:tue, wedtime:wedtime, wed:wed, thutime:thutime, thu:thu, fritime:fritime,fri:fri},
 								 success:function(data){
 									console.log(data);
-										
+									
 								 }
 								 
 							 });
