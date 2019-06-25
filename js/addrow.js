@@ -61,7 +61,7 @@ $(document).ready(function(){
         success:function(data){
          console.log(data); 
          fetchdata();
-         location.reload(); //this line helps showing notification if user has signed up and not logged in
+         //location.reload();
         }
       });
 
@@ -74,6 +74,7 @@ $(document).ready(function(){
          success: function(data)
          {
            $('#container').html(data); 
+           console.log('hello');
          }
        });     
       }
