@@ -206,7 +206,7 @@ if (isset($_POST['login'])) {
 		  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 		    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 		      <li class="nav-item active">
-		        <a class="nav-link" id="aboutus" href="#" onClick="return false" onmousedown = "javascript:content('aboutus');">About Us <span class="sr-only">(current)</span></a>
+		        <a class="nav-link" id="aboutus" href="#">About Us <span class="sr-only">(current)</span></a>
 		      </li>
 		    </ul>
 		   
@@ -304,7 +304,7 @@ if (isset($_POST['login'])) {
 	</div>
 <br><br><br><br><br>
 	<footer class="footer" style="text-align: center; color: white; background-color: #3b4237; padding-top: 2%; padding-bottom: 2%;">
-		Copyright 2019 <a href="#">@TechZone</a>
+		Copyright 2019 <a href="https://github.com/globefire">@TechZone</a>
 	</footer>
 </body> 
 </html>

@@ -2,7 +2,7 @@
 error_reporting(0);
 ini_set('display_errors', 0);
 session_start();
-echo $_SESSION['id'];
+// echo $_SESSION['id'];
 $serverqur = "localhost";
 $userqur = "root";
 $password = "";
@@ -27,7 +27,7 @@ die("Connection failed: " . mysqli_connect_error());
   <script type="text/javascript" src="../js/index.js"></script>
   <script type="text/javascript" src="../js/addrow.js"></script>
 	<style>
-		
+
 	</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
