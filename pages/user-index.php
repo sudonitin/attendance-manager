@@ -3,6 +3,9 @@ error_reporting(0);
 ini_set('display_errors', 0);
 session_start();
 // echo $_SESSION['id'];
+if ($_SESSION['logged_in'] != "active") {
+	header("location: ./index.php");
+}
 $serverqur = "localhost";
 $userqur = "root";
 $password = "";
@@ -227,9 +230,9 @@ die("Connection failed: " . mysqli_connect_error());
 								 data:{montime:montime, mon:mon, tuetime:tuetime, tue:tue, wedtime:wedtime, wed:wed, thutime:thutime, thu:thu, fritime:fritime,fri:fri},
 								 success:function(data){
 									console.log(data);
-										
+									
 								 }
-								 
+								 fetchdata();
 							 });
 		            </script>
 		            ";
@@ -291,6 +294,92 @@ die("Connection failed: " . mysqli_connect_error());
 									 fri.push($(this).text());
 									 //console.log($(this).text());
 								 });
+
+
+								//  window.onload = function(e){
+								// 	e.preventDefault();
+						
+								// 	if(!window.Notification){
+								// 		alert('not supported');
+								// 	} else {
+								// 		Notification.requestPermission(function(p){
+								// 			if (p === 'denied') {
+								// 				alert('u hav denied notifications');
+								// 			} else if (p === 'granted') {
+								// 				alert('granted');
+								// 			}
+								// 		});
+								// 	}
+								// }
+						
+								// function timec(){
+								// 	var a = new Date();
+								// 	// var wc = ['13:27:00','13:27:15'];
+								// 	// var wca = ['geometry','algebra'];
+								// 	// var c = ['13:16:40','13:16:55'];
+								// 	// var ca = ['maths','science'];
+								// 	var s;
+								// 	if(a.getDay() == 1){
+								// 		var tmp = montime;
+								// 		var tmpa = mon;
+								// 	}
+								// 	if(a.getDay() == 2){
+								// 		var tmp = tuetime;
+								// 		var tmpa = tue;
+								// 	}
+								// 	if(a.getDay() == 3){
+								// 		var tmp = wedtime;
+								// 		var tmpa = wed;
+								// 	}
+								// 	if(a.getDay() == 4){
+								// 		var tmp = thutime;
+								// 		var tmpa = thu;
+								// 	}
+								// 	if(a.getDay() == 5){
+								// 		var tmp = fritime;
+								// 		var tmpa = fri;
+								// 	}
+								// 	document.getElementById('c').textContent = tmp;
+								// 	if(a.getHours()<10){
+								// 		s = '0'+a.getHours();
+								// 	}
+								// 	else{
+								// 		s = a.getHours();
+								// 	}
+						
+								// 	if(a.getMinutes()<10){
+								// 		s += ':0'+a.getMinutes();
+								// 	}
+								// 	else{
+								// 		s += ':'+a.getMinutes();
+								// 	}
+						
+								// 	if(a.getSeconds()<10){
+								// 		s += ':0'+a.getSeconds();
+								// 	}
+								// 	else{
+								// 		s+=':'+a.getSeconds();
+								// 	}
+								// 	document.getElementById('s').textContent = s;
+								// 	if(tmp.includes(s)){
+								// 		document.getElementById('cen2').textContent = 'success';
+								// 		document.getElementById('cen').textContent = '';
+								// 		if (Notification.permission === 'default') {
+								// 			alert('allow me')
+								// 		} else {
+								// 			notify = new Notification('You have '+ tmpa[tmp.indexOf(s)] + ' lecture.');
+						
+								// 		}
+								// 	}
+								// 	else{
+								// 		document.getElementById('cen').textContent = 'fail';
+								// 		document.getElementById('cen2').textContent = '';
+								// 	}
+								// }
+						
+								// setInterval(timec, 1000);
+
+
 							}
 							});
 							
@@ -332,6 +421,7 @@ die("Connection failed: " . mysqli_connect_error());
 		});
 		$('.thutime').each(function(){
 			thutime.push($(this).text());
+			console.log($(this).text());
 		});
 		$('.thu').each(function(){
 			thu.push($(this).text());
@@ -345,6 +435,10 @@ die("Connection failed: " . mysqli_connect_error());
 		});
 		function timec(){
 			var a = new Date();
+			// var wc = ['13:27:00','13:27:15'];
+			// var wca = ['geometry','algebra'];
+			// var c = ['13:16:40','13:16:55'];
+			// var ca = ['maths','science'];
 			var s;
 			if(a.getDay() == 1){
 				var tmp = montime;
@@ -366,8 +460,12 @@ die("Connection failed: " . mysqli_connect_error());
 				var tmp = fritime;
 				var tmpa = fri;
 			}
+<<<<<<< HEAD
 			// document.getElementById('c').textContent = tmp+tmpa; array of time and subject of today's
 
+=======
+			document.getElementById('c').textContent = tmp;
+>>>>>>> parent of 436628f... notif working
 			if(a.getHours()<10){
 				s = '0'+a.getHours();
 			}
@@ -388,6 +486,7 @@ die("Connection failed: " . mysqli_connect_error());
 			else{
 				s+=':'+a.getSeconds();
 			}
+<<<<<<< HEAD
 			s = s.toString();
 			// document.getElementById('s').textContent = s; current time
 			tmp = tmp.map(String);
@@ -396,15 +495,26 @@ die("Connection failed: " . mysqli_connect_error());
 			// console.log(tmp.indexOf(k));
 			var x = tmp.toString(); //this line made the notification feature successful
 			if(x.search(s)>0){
+=======
+			document.getElementById('s').textContent = s;
+>>>>>>> parent of 436628f... notif working
 
+			for (let index = 0; index < tmp.length; index++) {
+				if (tmp[index] == s) {
+					flag = 1;
+				}
+			}
+			console.log(flag);
+			if(flag==1){
 				document.getElementById('cen2').textContent = 'success';
 				document.getElementById('cen').textContent = '';
-				if (Notification.permission === 'default') {
-					alert('allow me')
-				} else {
-					notify = new Notification('You have '+ tmpa[tmp.indexOf(k)] + ' lecture.');
-				}
-				
+				// if (Notification.permission === 'default') {
+				// 	alert('allow me')
+				// } else {
+				// 	notify = new Notification('You have '+ tmpa[tmp.indexOf(s)] + ' lecture.');
+
+				// }
+				flag = 0;
 			}
 			else{
 				document.getElementById('cen').textContent = 'fail';
