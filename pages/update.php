@@ -16,10 +16,11 @@ if ($_SESSION['tt']!='inserted' && $_SESSION['logged_in'] == 'active') {
 <!DOCTYPE html>
 <html>
 	<title>Change Timetable</title>
-	<!-- 1 fetch the timetable -->
-    <!-- 2 make the table editable -->
+	<!-- 1 fetch the timetable DONE -->
+    <!-- 2 make the table editable DONE-->
     <!-- 3 provide submit button to execute update table -->
-    <!-- 4 reload to user-index -->
+    <!-- 4 reload to user-index after submission -->
+    <!-- 5 add row functionality -->
     <body onload="logo()">
 
 	<nav class="navbar navbar-dark navbar-expand-lg" style="background-color: #3b4237; width: 100%; margin: 0;">
