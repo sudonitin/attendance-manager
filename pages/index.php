@@ -214,17 +214,17 @@ if (isset($_POST['login'])) {
 	</nav>
 <br>
 	<div class="container" id="content">
-		<h2 id="sub-head">Use the attendance manager now!</h2>
+		<h2 style="font-size: 3vw;" id="sub-head">Use the attendance manager now!</h2>
 		<p class="content">This website helps you maintainig you attendance according to the criteria you mention.</p><hr>
-		<h3 class="head-content">How to use?</h3>
+		<h3 class="head-content" style="font-size: 3vw;">How to use?</h3>
 		<ul class="content">
 			<li>Add each subject</li>
 			<li>Add day wise time table</li>
 			<li>Check if attended lecture</li>
 			<li>Press calculate button to kow how much percentage you have attended</li>
 		</ul><hr>
-		<h3 class="head-content">Here is a demonstration</h3><hr>
-		<h3 class="head-content">Create an account now or Login</h3>
+		<h3 style="font-size: 3vw;" class="head-content">Here is a demonstration</h3><hr>
+		<h3 class="head-content" style="font-size: 3vw;">Create an account now or Login</h3>
 		<p class="content">Use the free service to whitelist your name from defaulter's list.<br><button data-toggle="modal" data-target="#loginForm" class="my-btn-anim">Login</button> <button data-toggle="modal" data-target="#signupForm" class="my-btn-anim2">Signup</button></p><hr>
 		<i class="content">PS: This is just a manager. You have to attend lectures for saving yourself from defaulter list</i>😂😂😂
 

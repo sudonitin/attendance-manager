@@ -6,12 +6,12 @@
 
  @media only screen and (max-device-width: 700px){
  	.navbar{
- 		font-size: 180%;
+ 		font-size: 1vw;
  		font-family: 'Roboto';
  	}
 
  	.btn{
- 		font-size: 120%;
+		 font-size: 1vw;
  	}
 
  	.mybtn{
@@ -25,19 +25,19 @@
 	}
 
 	.navbar-brand{
-		font-weight: bold; font-size: 200%;
+		font-weight: bold; font-size: 1.5vw;
 	}
 	#sub-head{
-		font-size: 300%;
+		font-size: 2vw;
 		font-family: 'Bree Serif', serif;
 	}
 	.head-content{
-		font-size: 270%;
+		font-size: 2.1vw;
 		font-family: 'Bree Serif', serif;
 	}
 
 	.content{
-		font-size: 200%;
+		font-size: 2vw;
 	}
 
 	.my-btn-anim{
@@ -45,7 +45,7 @@
       border-style: solid;
       border-color: #1ac417;
       border-radius: 10%;
-      font-size: 120%;
+      font-size: 1vw;
       width: 4em;
     }
 
@@ -60,7 +60,7 @@
 	  border-style: solid;
 	  border-color: black;
 	  border-radius: 10%;
-	  font-size: 120%;
+	  font-size: 1vw;
 	  color: white;
 	  padding:  0.5% 1.5%;
 	  width: 4em;
@@ -74,11 +74,11 @@
 
 	#loginForm, #signupForm{
 		margin-top: 10%;
-		font-size: 170%;
+		font-size: 1vw;
 	}
 
 	.modal-title{
-		font-size: 150%;
+		font-size: 1vw;
 	}
 	.footer {
 	  position: absolute;
@@ -129,7 +129,7 @@
 	}
 
 	#aboutus{
-		font-size: 120%;
+		font-size: 1vw;
 	}
 
 	#aboutus:hover{
@@ -138,7 +138,7 @@
 	}
 
 	.navbar-brand{
-		font-weight: bold; font-family: 'Roboto'; font-size: 130%;
+		font-weight: bold; font-family: 'Roboto'; font-size: 1vw;
 	}
 
 	.my-btn-anim{
@@ -146,7 +146,7 @@
 	      border-style: solid;
 	      border-color: #1ac417;
 	      border-radius: 10%;
-	      font-size: 110%;
+	      font-size: 1vw;
 	      padding:  0.3% 1%;
 	    }
 
@@ -161,7 +161,7 @@
 	  border-style: solid;
 	  border-color: black;
 	  border-radius: 10%;
-	  font-size: 110%;
+	  font-size: 1vw;
 	  color: white;
 	  padding:  0.3% 1%;
 	}
@@ -204,7 +204,7 @@
 	}
 
 	#aboutus{
-		font-size: 120%;
+		font-size: 1vw;
 	}
 
 	#aboutus:hover{
@@ -213,7 +213,7 @@
 	}
 
 	.navbar-brand{
-		font-weight: bold; font-family: 'Roboto'; font-size: 130%;
+		font-weight: bold; font-family: 'Roboto'; font-size: 1vw;
 	}
 
 	.my-btn-anim{
@@ -221,7 +221,7 @@
 	      border-style: solid;
 	      border-color: #1ac417;
 	      border-radius: 10%;
-	      font-size: 110%;
+	      font-size: 1vw;
 	      padding:  0.3% 1%;
 	    }
 
@@ -236,7 +236,7 @@
 	  border-style: solid;
 	  border-color: black;
 	  border-radius: 10%;
-	  font-size: 110%;
+	  font-size: 1vw;
 	  color: white;
 	  padding:  0.3% 1%;
 	}

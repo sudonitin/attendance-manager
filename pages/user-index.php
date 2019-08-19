@@ -2,10 +2,7 @@
 error_reporting(0);
 ini_set('display_errors', 0);
 session_start();
-// echo $_SESSION['id'];
-if ($_SESSION['logged_in'] != "active") {
-	header("location: ./index.php");
-}
+echo $_SESSION['id'];
 $serverqur = "localhost";
 $userqur = "root";
 $password = "";
@@ -29,9 +26,7 @@ die("Connection failed: " . mysqli_connect_error());
   <link rel="stylesheet" type="text/css" href="../css/index.css">
   <script type="text/javascript" src="../js/index.js"></script>
   <script type="text/javascript" src="../js/addrow.js"></script>
-	<style>
 
-	</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 
@@ -55,26 +50,21 @@ die("Connection failed: " . mysqli_connect_error());
 			
 			/* ---- stats.js ---- */ 
 		.count-particles{ background: #000022; position: absolute; top: 48px; left: 0; width: 80px; color: #13E8E9 text-align: left; text-indent: 4px; line-height: 14px; padding-bottom: 2px; font-family: Helvetica, Arial, sans-serif; font-weight: bold; } 
-
 		.js-count-particles{ 
 	; 
 		} 
-
 		#stats, .count-particles{ 
 			-webkit-user-select: none; 
 			margin-top: 5px; 
 			margin-left: 5px; 
 		} 
-
 		#stats{ 
 			border-radius: 3px 3px 0 0; 
 			overflow: hidden; 
 		} 
-
 		.count-particles{ 
 			border-radius: 0 0 3px 3px; 
 		}
-
 			</style>
 
 			<script type="text/javascript">
@@ -110,15 +100,14 @@ die("Connection failed: " . mysqli_connect_error());
 		  </div>
 	</nav><br>
 
-	<!-- notification experiment -->
-	<!-- <center id="cen">
+	<center id="cen">
 	</center>
 	<center>
 		<h1 id='c'></h1><br>
 		<h1 id='s'></h1>
 	</center>
 	<center id='cen2'>
-	</center> -->
+	</center>
 
 	<div class="container" id="container">
 		<table class="table table-bordered" id="tab_logic" >
@@ -151,7 +140,6 @@ die("Connection failed: " . mysqli_connect_error());
 	</div>
 	
 	<!-- <footer class="footer" style="text-align: center; background-color: #f2f2f2; padding-top: 2%; padding-bottom: 2%;">
-
 		Copyright 2019 <a href="#">@TechZone</a>
 	</footer> -->
 
@@ -166,18 +154,6 @@ die("Connection failed: " . mysqli_connect_error());
 			if (sizeof($tmp) == 0) {
 				echo "	
 					<script type = \"text/javascript\">
-					
-					function fetchdata(){
-						$.ajax({
-						  url: \"fetch.php\",
-						  method: \"POST\",
-						  success: function(data)
-						  {
-						   console.log(data);
-							$('#container').html(data);
-							
-						  }
-						});
 					  
 					   }
 								var montime = [];	
@@ -232,7 +208,7 @@ die("Connection failed: " . mysqli_connect_error());
 									console.log(data);
 									
 								 }
-								 fetchdata();
+								 
 							 });
 		            </script>
 		            ";
@@ -314,7 +290,6 @@ die("Connection failed: " . mysqli_connect_error());
 		var thu = [];
 		var fritime = [];
 		var fri = [];
-
 		$('.montime').each(function(){
 			montime.push($(this).text());
 		});
@@ -335,7 +310,6 @@ die("Connection failed: " . mysqli_connect_error());
 		});
 		$('.thutime').each(function(){
 			thutime.push($(this).text());
-			console.log($(this).text());
 		});
 		$('.thu').each(function(){
 			thu.push($(this).text());
@@ -349,10 +323,6 @@ die("Connection failed: " . mysqli_connect_error());
 		});
 		function timec(){
 			var a = new Date();
-			// var wc = ['13:27:00','13:27:15'];
-			// var wca = ['geometry','algebra'];
-			// var c = ['13:16:40','13:16:55'];
-			// var ca = ['maths','science'];
 			var s;
 			if(a.getDay() == 1){
 				var tmp = montime;
@@ -374,72 +344,49 @@ die("Connection failed: " . mysqli_connect_error());
 				var tmp = fritime;
 				var tmpa = fri;
 			}
-<<<<<<< HEAD
-			// document.getElementById('c').textContent = tmp+tmpa; array of time and subject of today's
-
-=======
-			document.getElementById('c').textContent = tmp;
->>>>>>> parent of 436628f... notif working
+			document.getElementById('c').textContent = tmp+tmpa;
 			if(a.getHours()<10){
 				s = '0'+a.getHours();
 			}
 			else{
 				s = a.getHours();
 			}
-
 			if(a.getMinutes()<10){
 				s += ':0'+a.getMinutes();
 			}
 			else{
 				s += ':'+a.getMinutes();
 			}
-
 			if(a.getSeconds()<10){
 				s += ':0'+a.getSeconds();
 			}
 			else{
 				s+=':'+a.getSeconds();
 			}
-<<<<<<< HEAD
 			s = s.toString();
-			// document.getElementById('s').textContent = s; current time
+			document.getElementById('s').textContent = s;
 			tmp = tmp.map(String);
 			// console.log(tmp);
 			k = " "+s+" "; //this line made the notification feature successful
 			// console.log(tmp.indexOf(k));
-			var x = tmp.toString(); //this line made the notification feature successful
+			var x = tmp.toString(); ////this line made the notification feature successful
 			if(x.search(s)>0){
-=======
-			document.getElementById('s').textContent = s;
->>>>>>> parent of 436628f... notif working
-
-			for (let index = 0; index < tmp.length; index++) {
-				if (tmp[index] == s) {
-					flag = 1;
-				}
-			}
-			console.log(flag);
-			if(flag==1){
 				document.getElementById('cen2').textContent = 'success';
 				document.getElementById('cen').textContent = '';
-				// if (Notification.permission === 'default') {
-				// 	alert('allow me')
-				// } else {
-				// 	notify = new Notification('You have '+ tmpa[tmp.indexOf(s)] + ' lecture.');
-
-				// }
-				flag = 0;
+				if (Notification.permission === 'default') {
+					alert('allow me')
+				} else {
+					notify = new Notification('You have '+ tmpa[tmp.indexOf(k)] + ' lecture.');
+				}
+				
 			}
 			else{
 				document.getElementById('cen').textContent = 'fail';
 				document.getElementById('cen2').textContent = '';
 			}
 		}
-
 		setInterval(timec, 1000);
-
 	}
 </script>
 </body>
 </html>
-
