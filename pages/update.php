@@ -20,11 +20,11 @@ if ($_SESSION['tt']!='inserted' && $_SESSION['logged_in'] == 'active') {
     <!-- 2 make the table editable DONE-->
     <!-- 3 provide submit button to execute update table -->
     <!-- 4 reload to user-index after submission -->
-    <!-- 5 add row functionality -->
+    <!-- 5 add row functionality DONE-->
     <body onload="logo()">
 
 	<nav class="navbar navbar-dark navbar-expand-lg" style="background-color: #3b4237; width: 100%; margin: 0;">
-		  <a class="navbar-brand" href="#" onClick="return false" onmousedown = "javascript:content('default');">
+		  <a class="navbar-brand" href="./user-index.php">
 		  	<img src="../images/logo.jpg" id="logo" width="50" height="50" /> <span style="color: #ef8b00; font-weight: bold">Tech</span><span style="font-weight: bold">Zone</span>
 		  </a>
 		  <button class="navbar-toggler" style="color: white;" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">

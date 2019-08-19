@@ -76,11 +76,11 @@ require('./back.php');
 				
 					<tr id="addr0"></tr>
 				</tbody>
-				<input type = "submit" value="submit" id='insert' name="insert">
+				
 			
 			
 		</table>
-		
+		<input type = "submit" value="submit" id='insert' name="insert" class="btn btn-outline-dark"> 
 		<input type="button" class="btn btn-danger" value="Add row" id="add_row"  name=""> <small>Leave the boxes empty if not needed</small>
 		
 	</div>
