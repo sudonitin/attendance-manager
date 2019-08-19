@@ -75,6 +75,7 @@ $(document).ready(function(){
          {
            $('#container').html(data); 
            console.log('hello');
+           window.location.reload(); // reloaded the page
          }
        });     
       }
