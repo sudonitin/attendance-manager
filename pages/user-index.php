@@ -2,7 +2,7 @@
 error_reporting(0);
 ini_set('display_errors', 0);
 session_start();
-echo $_SESSION['id'];
+// echo $_SESSION['id'];
 $serverqur = "localhost";
 $userqur = "root";
 $password = "";
@@ -345,6 +345,7 @@ die("Connection failed: " . mysqli_connect_error());
 				var tmpa = fri;
 			}
 			document.getElementById('c').textContent = tmp+tmpa;
+			document.getElementById('c').style.display = "none";
 			if(a.getHours()<10){
 				s = '0'+a.getHours();
 			}
@@ -365,6 +366,7 @@ die("Connection failed: " . mysqli_connect_error());
 			}
 			s = s.toString();
 			document.getElementById('s').textContent = s;
+			document.getElementById('s').style.display = "none";
 			tmp = tmp.map(String);
 			// console.log(tmp);
 			k = " "+s+" "; //this line made the notification feature successful
@@ -372,7 +374,9 @@ die("Connection failed: " . mysqli_connect_error());
 			var x = tmp.toString(); ////this line made the notification feature successful
 			if(x.search(s)>0){
 				document.getElementById('cen2').textContent = 'success';
+				document.getElementById('cen2').style.display = "none";
 				document.getElementById('cen').textContent = '';
+				document.getElementById('cen').style.display = "none";
 				if (Notification.permission === 'default') {
 					alert('allow me')
 				} else {
@@ -382,7 +386,9 @@ die("Connection failed: " . mysqli_connect_error());
 			}
 			else{
 				document.getElementById('cen').textContent = 'fail';
+				document.getElementById('cen').style.display = "none";
 				document.getElementById('cen2').textContent = '';
+				document.getElementById('cen2').style.display = "none";
 			}
 		}
 		setInterval(timec, 1000);
