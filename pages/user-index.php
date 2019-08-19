@@ -2,6 +2,10 @@
 error_reporting(0);
 ini_set('display_errors', 0);
 session_start();
+
+if ($_SESSION['logged_in'] != 'active') {
+	header('Location: ./index.php');
+}
 // echo $_SESSION['id'];
 $serverqur = "localhost";
 $userqur = "root";
@@ -91,7 +95,7 @@ die("Connection failed: " . mysqli_connect_error());
 		        <a class="nav-link" id="aboutus" href="#" onClick="return false" onmousedown = "javascript:content('aboutus');">About Us <span class="sr-only">(current)</span></a>
 		      </li>
 		      <li class="nav-item active">
-		        <a class="nav-link" id="aboutus" href="#" onClick="return false" onmousedown = "javascript:content('aboutus');">Change timetable <span class="sr-only">(current)</span></a>
+		        <a class="nav-link" id="aboutus" href="./updateTT.php" onClick="return false" onmousedown = "javascript:content('aboutus');">Change timetable <span class="sr-only">(current)</span></a>
 		      </li>
 		    </ul>
 		    <form class="form-inline my-2 my-lg-0" action="./signout.php">
