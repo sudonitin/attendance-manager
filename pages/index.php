@@ -1,7 +1,11 @@
 <?php
 
+error_reporting(0);
+ini_set('display_errors', 0);
 session_start();
-
+if ($_SESSION['logged_in'] == 'active') {
+	header('Location: ./user-index.php');
+}
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -19,13 +23,9 @@ $name_err = $username_err =  "";
 
 //sigup code
 if (isset($_POST['signin'])) {
-  # code...
   //session_start();
 
-  // echo "hello world"; 
-
   $name = mysqli_real_escape_string($conn, $_POST['name']);
-  #$num = mysqli_real_escape_string($conn, $_POST['contact_no']);
   $email = mysqli_real_escape_string($conn, $_POST['email']);
   $pass = mysqli_real_escape_string($conn, $_POST['password']);
   $conpass = mysqli_real_escape_string($conn, $_POST['confirm']);
@@ -34,30 +34,20 @@ if (isset($_POST['signin'])) {
      if(!empty(trim($_POST["name"]))){
           $first = test_input($name);
           if (!preg_match("/^[a-zA-Z ]*$/",$first)) {
-            # code...
             $name_err = "Only letters and spaces are allowed";
           }
     }
 
 
     if (empty($name_err)) {
-      # code...
-       // echo "hello world!!";
-
-    	
       $email_query = "SELECT * FROM users WHERE email = ?";
 
       if ($emailstmt = mysqli_prepare($conn, $email_query)) {
-        # code...
-        // echo "hello";
         mysqli_stmt_bind_param($emailstmt, 's', $email);
-        
         mysqli_stmt_execute($emailstmt);
-
         $email_result = mysqli_stmt_get_result($emailstmt);
         $emailrow = mysqli_fetch_array($email_result, MYSQLI_BOTH);
         if ($emailrow['email'] == $email) {
-          # code...
           echo "
             <script type = \"text/javascript\">
               alert('Email is already registered.');
@@ -69,16 +59,12 @@ if (isset($_POST['signin'])) {
         	$name_query = "SELECT * FROM users WHERE username = ?";
 
 		      if ($namestmt = mysqli_prepare($conn, $name_query)) {
-		        # code...
-		        // echo "hello";
 		        mysqli_stmt_bind_param($namestmt, 's', $name);
-		        
 		        mysqli_stmt_execute($namestmt);
 
 		        $name_result = mysqli_stmt_get_result($namestmt);
 		        $namerow = mysqli_fetch_array($name_result, MYSQLI_BOTH);
 		        if ($namerow['username'] == $name) {
-		          # code...
 		          echo "
 		            <script type = \"text/javascript\">
 		              alert('name is already registered.');
@@ -87,11 +73,9 @@ if (isset($_POST['signin'])) {
 		        }
 		        else{
 		        	if ($pass == $conpass) {
-	      		// echo "hello 4";
 			          $pass = md5($pass); //hashing 
 			          $sql = "INSERT INTO users (username, email, password) VALUES (?,?,?)"; 
 			          if ($stmt = mysqli_prepare($conn, $sql)) {
-			            # code...
 			            mysqli_stmt_bind_param($stmt, 'sss', $name,  $email, $pass);
 			            mysqli_stmt_execute($stmt);
 			            $_SESSION['logged_in'] = "active";
@@ -104,8 +88,6 @@ if (isset($_POST['signin'])) {
 								$id_query = "SELECT * FROM users WHERE username = ?";
 
 								if ($idstmt = mysqli_prepare($conn, $id_query)) {
-									# code...
-									// echo "hello";
 									mysqli_stmt_bind_param($idstmt, 's', $name);
 									mysqli_stmt_execute($idstmt);
 									$id_result = mysqli_stmt_get_result($idstmt);
@@ -168,31 +150,13 @@ if (isset($_POST['login'])) {
       
   }
 
-
+  require('./back.php');
 ?>
 
 
 <!DOCTYPE html>
 <html>
-<head>
 	<title>TechZone</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  <link href='http://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="../css/index.css">
-  <script type="text/javascript" src="../js/index.js"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<div id="background"></div>
-<script>
-	$("#content").load("./user-index.php #particlecode")
-</script>	
-	<!--particle ends here-->
-	</head>
 		
 	
 <body onload="logo()">
