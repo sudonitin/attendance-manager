@@ -44,7 +44,7 @@
                     '; //';'must be present at the end of query because we are implementing multiple sql queries and these queries are separated by a semi-colon
                   
                 }
-
+                $_SESSION['tt'] = 'inserted';
                 if (mysqli_multi_query($conn, $query)) {
                     echo "data inserted";
                 }

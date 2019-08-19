@@ -85,13 +85,10 @@ require('./back.php');
 		
 	</div>
 	
-	<!-- <footer class="footer" style="text-align: center; background-color: #f2f2f2; padding-top: 2%; padding-bottom: 2%;">
-		Copyright 2019 <a href="#">@TechZone</a>
-	</footer> -->
 
 	<?php
 	
-	
+			// checks the size of result of particular userid from timetable table, if size is 0 performs insertion, if size is not 0 fetches data from table
 			$output = '';
 			$qur = 'SELECT * FROM timetable WHERE id= "'.$_SESSION["id"].'"';
 			$result = mysqli_query($conn, $qur);
