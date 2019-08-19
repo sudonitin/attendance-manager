@@ -1,7 +1,7 @@
 <?php 
             // logic of updating table is
-            // 1)Delete all the rows of this id 
-            // 2)Insert the whole table
+            // 1)Delete all the rows of this id DONE
+            // 2)Insert the whole table DONE
             session_start();
             echo $_SESSION['id'] . " ". $_SESSION['username'];
             $servername = "localhost";

@@ -18,8 +18,8 @@ if ($_SESSION['tt']!='inserted' && $_SESSION['logged_in'] == 'active') {
 	<title>Change Timetable</title>
 	<!-- 1 fetch the timetable DONE -->
     <!-- 2 make the table editable DONE-->
-    <!-- 3 provide submit button to execute update table -->
-    <!-- 4 reload to user-index after submission -->
+    <!-- 3 provide submit button to execute update table DONE-->
+    <!-- 4 reload to user-index after submission DONE-->
     <!-- 5 add row functionality DONE-->
     <body onload="logo()">
 
